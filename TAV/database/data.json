@@ -1,0 +1,158 @@
+[
+  {
+    "name": "mooze",
+    "md5": "efc05e673dc516a6a96bc346dc7c93a6",
+    "sha256": "855e3aa2a4b8432f5a2b77a6aa2635ae8382ca6df76b4c0d7405856faa7b5b5b",
+	"file_created": [
+		"C:\\Windows\\System32\\Pbt32.exe"
+	],
+	"hkey_created": ["HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Pbt32"]
+  },
+  {
+    "name": "artemis",
+    "md5": "caff801a280d42dbd1ad6b1266d3c43a",
+    "sha256": "834d1dbfab8330ea5f1844f6e905ed0ac19d1033ee9a9f1122ad2051c56783dc",
+	"file_created": [
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\TsuE367CCF9.dll",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\996E.log",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A.dat",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\_Setup.dll",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Setup.ico",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Readme.txt",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Setup.exe",
+		"C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\_Setup.dll",
+		"C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\Setup.ico",
+		"C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\Readme.txt"
+	],
+	"hkey_created": ["HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SharedDlls\\C:\\WINDOWS\\system32\\ChilkatMail_v8.dll"]
+  },
+  {
+    "name": "huer",
+    "md5": "42914d6d213a20a2684064be5c80ffa9",
+    "sha256": "abce729b892c9784dd9e9a89999a4bc64da9398b4fa46b0efcc60dd91a4eab69",
+	"file_created": [
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\rsb.exe",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
+		"C:\\Documents and Settings\\All Users\\Application Data\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
+		"C:\\Documents and Settings\\Administrator\\Templates\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\xno.exe",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\uyx.exe"
+	],
+	"hkey_created": [
+	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\DoNotAllowExceptions",
+	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\DisableNotifications",
+	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall",
+	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\DoNotAllowExceptions",
+	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\DisableNotifications",
+	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Start",
+	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\AntiVirusDisableNotify",
+	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\AntiVirusOverride",
+	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\FirewallDisableNotify",
+	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\FirewallOverride"
+	]
+  },
+  {
+    "name": "xema",
+    "md5": "b1df147a13c497d3387cc61741bfa44d",
+    "sha256": "118bd656132a06341d0e7428dc82e2e5a4ee539372316cb397533468457af22d",
+	"file_created": [
+		""
+	],
+	"hkey_created": [
+	"HKEY_CURRENT_USER\\Software\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows Script\\Settings\\JITDebug",
+	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\0800277A0DD3"
+	]
+  },
+  {
+    "name": "scar",
+    "md5": "6de84d91cbacb4e9c7ba1cc5e2a52362",
+    "sha256": "9e0c326e7d4e5d480b7eadd7eebb78f2e6ed12da8ae61c049d4b242f46a8566a",
+	"file_created": [
+		"C:\\Documents and Settings\\Administrator\\wupdte002.txt",
+		"C:\\Documents and Settings\\Administrator\\wupdte002.com"
+	],
+	"hkey_created": [
+	"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\AutoConfigURL",
+	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\wsysfxs"
+	]
+  },
+  {
+    "name": "buterat",
+    "md5": "f7198035cce341240181d005c7b022e0",
+    "sha256": "2aa04981d8ef2078ffc1ae9c1c1f3a0c1a5dcab9c1739d98fabe5ac00fb6f856",
+	"file_created": [
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\2.tmp",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\3.tmp",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\4.tmp",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\~TM5.tmp",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\~TM6.tmp",
+		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\7.tmp"
+
+	],
+	"hkey_created": [
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultCount",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultTime",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\CPC\\Volume\\{61066b64-7a09-11e4-91b2-806d6172696f}\\Generation",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\CPC\\Volume\\{67ff5543-c5c9-11e0-9f6d-806d6172696f}\\Generation",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Cached\\{2559A1F4-21D7-11D4-BDAF-00C04F60B9F0} {000214E6-0000-0000-C000-000000000046} 0x401",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Cached\\{2559A1F5-21D7-11D4-BDAF-00C04F60B9F0} {000214E6-0000-0000-C000-000000000046} 0x401",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\SessionInformation\\ProgramCount",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Discardable\\PostSetup\\Component Categories\\{00021493-0000-0000-C000-000000000046}\\Enum\\Implementing",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultTime",
+		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\SessionInformation\\ProgramCount"
+	]
+  },
+  {
+    "name": "delf",
+    "md5": "9390c3e1001d5231795482d2e00026e3",
+    "sha256": "3940df71469a1d73f9fdaff09881995ad8d7b8f840c14168c00ce98f632718b7",
+	"file_created": [
+		"C:\\WINDOWS\\system32\\svchosts.exe"
+	],
+	"hkey_created": ["HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SysTry"]
+  },
+  {
+    "name": "dialer",
+    "md5": "2f0f35cc352b5d6fee61ab69be50738f",
+    "sha256": "14514563ff2d7f916f48bfcffa996b7b5f5b6fd930d3584f8f57733cb1cf9c5b",
+	"file_created": [
+		""
+	],
+	"hkey_created": [
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\warn",
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\SVersion",
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime",
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\security",
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime",
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime"
+
+	]
+  },
+  {
+    "name": "zusy",
+    "md5": "176296fa3ac304b7306328b16e6ae23a",
+    "sha256": "ad4d936868a828df4544471be94056c64981131e6c0ea4a1adad25ed0f0de041",
+	"file_created": [
+		"C:\\Documents and Settings\\All Users\\Application Data\\Microsoft\\Dr Watson\\drwtsn32.log"
+	],
+	"hkey_created": [
+		""
+	]
+  },
+  {
+    "name": "hukle",
+    "md5": "3054eacbfe7f1e061b0c23ea2de38507",
+    "sha256": "b1b33a1aa88b3fd873a277e4e6df88bb797b578aef33741ef1e13ca40bd4520c",
+	"file_created": [
+		"C:\\Windows\\System32\\1560847240.dll",
+		"C:\\Windows\\System32\\1560847240.exe",
+		"C:\\Windows\\System32\\1561209425.dll",
+		"C:\\Windows\\System32\\1561209425.exe"
+	],
+	"hkey_created": [
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
+	]
+  }
+]
