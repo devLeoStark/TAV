@@ -1,18 +1,38 @@
 import hashlib
 import json
 import os
+import sys
 import time
+from threading import Thread
 
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QMessageBox
-import sys
-
 from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QMessageBox
 
 COLOR_BLACK = QColor(0, 0, 0)
 COLOR_RED = QColor(255, 0, 0)
 COLOR_GREEN = QColor(0, 120, 0)
+
+MD5 = SHA256 = 1
+SAFE = 1
+VIRUS = 3
+
+
+def HashFileMD5(file):
+    md5 = hashlib.md5()
+    with open(file, 'rb') as file:
+        buffer = file.read()
+        md5.update(buffer)
+    return md5.hexdigest()
+
+
+def HashFileSHA256(file):
+    sha256 = hashlib.sha256()
+    with open(file, 'rb') as file:
+        buffer = file.read()
+        sha256.update(buffer)
+    return sha256.hexdigest()
 
 
 class Dashboard(QtWidgets.QMainWindow):
@@ -21,8 +41,15 @@ class Dashboard(QtWidgets.QMainWindow):
         uic.loadUi("views/dashboard.ui", self)
         self.btnQuickScan.clicked.connect(self.showQuickScan)
 
+    def backToDashboard(self):
+        try:
+            uic.loadUi("views/dashboard.ui", self)
+        except Exception as e:
+            print(str(e))
+
     def showQuickScan(self):
         uic.loadUi("views/quickscan.ui", self)
+        self.btnHome.clicked.connect(self.backToDashboard)
         self.btnChooseFolder.clicked.connect(self.chooseFolder)
         self.disableSpecificScan()
         self.optionSpecificScan.clicked.connect(self.enableSpecificScan)
@@ -45,65 +72,58 @@ class Dashboard(QtWidgets.QMainWindow):
                 self.SpecificScan(path)
 
     def SpecificScan(self, path):
-        count = 0
-        isVirus = False
-        scanned_size = 0
-        total_size = self.TotalSizeDirectory(path)
-        database = self.ReadJsonData("database/data.json")
-
+        guess = SAFE
+        scanned = 0
+        total = self.getNumberOfFile(path)
         self.isScanning(True)
         self.logBrowser.append("Scanning: " + path)
-        self.logBrowser.append(
-            ".......................................................................................")
+        self.logBrowser.append("-----------------------*****-----------------------")
         scanPath = path.replace('/', '\\')
-        for path, directories, files in os.walk(path):
+        for path, directories, files in os.walk(scanPath):
             for file in files:
-                if file.endswith("exe"):
-                    filePath = os.path.join(path, file)
-                    fileToMD5 = self.HashFileMD5(filePath)
-                    scanned_size += os.path.getsize(filePath)
-                    for data in database:
-                        if fileToMD5 == data["md5"]:
-                            isVirus = True
-                    self.LoggingProcess(filePath, isVirus)
-                    self.progressBarScan.setValue((int(scanned_size / total_size)) * 100)
+                filePath = os.path.join(path, file)
+                scanned += 1
+                if self.DatabaseChecking(filePath) > 0:
+                    guess = VIRUS
+                self.LoggingProcess(filePath, guess)
+                self.progressBarScan.setValue((int(scanned / total)) * 100)
         self.Finish()
+
+    def DatabaseChecking(self, filePath):
+        level = 0
+        fileToMD5 = HashFileMD5(filePath)
+        fileToSHA256 = HashFileSHA256(filePath)
+        database = self.ReadJsonData("database/data.json")
+        for data in database:
+            if fileToMD5 == data["md5"]:
+                level += MD5
+            if fileToSHA256 == data["sha256"]:
+                level += SHA256
+        return level
 
     def Finish(self):
         self.logBrowser.setTextColor(COLOR_BLACK)
         self.logBrowser.append("FINISH")
 
-    def TotalSizeDirectory(self, path):
-        total_size = 0
+    def getNumberOfFile(self, path):
+        amount = 0
         for path, directories, files in os.walk(path):
-            filePath = ""
             for file in files:
-                if file.endswith("exe"):
-                    total_size += os.path.getsize(os.path.join(path, file))
-        return total_size
+                amount += 1
+        return amount
 
-    def LoggingProcess(self, path, isVirus):
-        logLine = time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime()) + ": " + path
-        if not isVirus:
-            self.logBrowser.setTextColor(COLOR_GREEN)
-            self.logBrowser.append(logLine)
-        else:
+    def LoggingProcess(self, path, guess):
+        logLine = time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime()) + ":  " + path
+        if guess == VIRUS:
             self.logBrowser.setTextColor(COLOR_RED)
-            self.logBrowser.append(logLine)
+        else:
+            self.logBrowser.setTextColor(COLOR_GREEN)
+        self.logBrowser.append(logLine)
 
     def ReadJsonData(self, dataPath):
         with open(dataPath) as json_file:
             jsonData = json.load(json_file)
             return jsonData
-
-    def HashFileMD5(self, file):
-        md5 = hashlib.md5()
-        with open(file, 'rb') as file:
-            buffer = file.read()
-            md5.update(buffer)
-        return md5.hexdigest()
-
-    # def Progressing(self):
 
     def FullScan(self, path):
         self.isScanning(True)
@@ -129,7 +149,7 @@ class Dashboard(QtWidgets.QMainWindow):
             os.startfile(fileName)
 
     def chooseFolder(self):
-        folderName = QFileDialog.getExistingDirectory(self, "Choose Folder")
+        folderName = QFileDialog.getExistingDirectory(self, "Choose Folder", "C:/")
         self.folderPath.setText(folderName)
 
     def checkPath(self, path):
@@ -156,13 +176,14 @@ class Dashboard(QtWidgets.QMainWindow):
     def CancelScan(self):
         self.isScanning(False)
         self.logBrowser.setTextColor(COLOR_BLACK)
-        self.logBrowser.append("CANCELED SCAN\n")
+        self.logBrowser.append("CANCELED SCAN")
 
     def ClearLog(self):
         self.logBrowser.clear()
 
 
-app = QtWidgets.QApplication(sys.argv)
-win = Dashboard()
-win.show()
-sys.exit(app.exec())
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    win = Dashboard()
+    win.show()
+    sys.exit(app.exec())

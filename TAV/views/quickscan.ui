@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>QuickScan</class>
- <widget class="QMainWindow" name="QuickScan">
+ <class>QuickScanLayout</class>
+ <widget class="QMainWindow" name="QuickScanLayout">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>Quick Scan</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icons/tav_logo.png</normaloff>icons/tav_logo.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
@@ -41,7 +45,7 @@
    </size>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lbl_icon">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -60,7 +64,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="lbl_name">
     <property name="geometry">
      <rect>
       <x>375</x>
@@ -89,7 +93,7 @@
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnHome">
     <property name="geometry">
      <rect>
       <x>17</x>
@@ -331,7 +335,7 @@ p, li { white-space: pre-wrap; }
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: #f7931e;</string>
     </property>
     <property name="text">
      <string>SCAN</string>
@@ -347,16 +351,6 @@ p, li { white-space: pre-wrap; }
      </size>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>900</width>
-     <height>26</height>
-    </rect>
-   </property>
   </widget>
  </widget>
  <resources/>
