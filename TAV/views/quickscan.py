@@ -25,37 +25,14 @@ SAFE = 1
 VIRUS = 3
 
 virus_endswith_list = {
-    'bat', 'chm', 'cmd', 'com', 'cpl', 'doc', 'exe', 'hlp', 'hta', 'js', 'jse', 'lnk', 'msi', 'pif', 'reg', 'scr',
-    'sct', 'shb', 'shs', 'vb', 'vbe', 'vbs', 'wsc', 'wsf', 'wsh'
+    'exe', 'pif', 'application', 'gadget', 'msi', 'msp', 'com', 'scr', 'hta', 'cpl', 'msc', 'jar',
+    'bat', 'cmd', 'vb', 'vbs', 'vbe', 'js', 'jse', 'ws', 'wsf', 'wsc', 'wsh', 'ps1', 'ps1xml', 'ps2', 'ps2xml',
+    'psc1', 'psc2', 'msh', 'msh1', 'msh2', 'mshxml', 'msh1xml', 'msh2xml',
+    'scf', 'lnk', 'inf',
+    'reg',
+    'doc', 'xls', 'ppt', 'docm', 'dotm', 'xlsm', 'xltm', 'xlam', 'pptm', 'potm', 'ppam', 'ppsm', 'sldm',
+    'chm', 'hlp', 'sct', 'shb', 'shs',
 }
-
-white_list = {'kernel32.dll!GetProcAddress': [2, 25],  # Read 25 bytes for 2nd argument of GetProcAddress
-              'kernel32.dll!CreateFileW': [1, 50],  # Read 50 bytes for 1st argument of CreateFileW
-              'kernel32.dll!CreateFileA': [1, 50],  # Read 50 bytes for 1st argument of CreateFileA
-              'kernel32.dll!WriteFile': [2, 50],  # Read 50 bytes for 1st argument of WriteFile
-              'kernel32.dll!WriteFileGather': [2, 50],  # Read 50 bytes for 1st argument of WriteFileGather
-              'kernel32.dll!LoadLibraryW': [1, 20],  # Read 20 bytes for 1st argument of LoadLibraryW
-              'kernel32.dll!LoadLibraryA': [1, 20],  # Read 20 bytes for 1st argument of LoadLibraryA
-              'kernel32.dll!LoadLibraryExA': [1, 20],  # Read 20 bytes for 1st argument of LoadLibraryExA
-              'kernel32.dll!LoadLibraryExW': [1, 20]}  # Read 20 bytes for 1st argument of LoadLibraryExW
-# List of interesting APIS to be Hooked and monitored
-target_apis = {'kernel32.dll!LoadLibraryA': 1,
-               'kernel32.dll!LoadLibraryExA': 1,
-               'kernel32.dll!LoadLibraryExW': 1,
-               'kernel32.dll!LoadLibraryW': 1,
-               'kernel32.dll!LoadModule': 2,
-               'kernel32.dll!GetProcAddress': 2,
-               'kernel32.dll!VirtualProtect': 4,
-               'kernel32.dll!VirtualProtectEx': 4,
-               'kernel32.dll!WriteProcessMemory': 5,
-               'kernel32.dll!WriteFile': 5,
-               'kernel32.dll!WriteFileEx': 5,
-               'kernel32.dll!WinExec': 2,
-               'kernel32.dll!CreateFileA': 7,
-               'kernel32.dll!WriteFileGather': 5}
-
-
-################################################ Config End #########################################
 
 
 def hashFileMD5(file):
@@ -176,7 +153,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
     def finishScan(self, bool):
         if bool:
             self.logBrowser.setTextColor(COLOR_BLACK)
-            self.logBrowser.append("DONE")
+            self.logBrowser.append("=== FINISHED ===")
             self.isScanning(False)
 
     def loggingProcess(self, result):
@@ -188,6 +165,10 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         else:
             self.logBrowser.setTextColor(COLOR_GREEN)
         self.logBrowser.append(logLine)
+
+        if self.scanThread.killed:
+            self.logBrowser.setTextColor(COLOR_BLACK)
+            self.logBrowser.append("=== CANCELLED ===")
 
     def enableSpecificScan(self, boolean):
         self.showScanTool(False)
@@ -204,6 +185,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
 
     def cancelScan(self):
         self.scanThread.killed = True
+        self.isScanning(False)
 
     def scanControl(self):
         if self.btnControl.isChecked():

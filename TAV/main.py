@@ -1,15 +1,19 @@
+import json
 import os.path
 import sys
+import time
 from time import sleep
 from winreg import ConnectRegistry, HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, HKEY_USERS, \
-    HKEY_CURRENT_CONFIG, OpenKey, QueryValueEx
+    HKEY_CURRENT_CONFIG, OpenKey, QueryValueEx, KEY_ALL_ACCESS, DeleteValue
 
 from PyQt5 import QtWidgets, uic, QtCore
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QGraphicsDropShadowEffect
+from PyQt5.QtWidgets import QGraphicsDropShadowEffect, QAbstractScrollArea, QHeaderView
 
 from views.dashboard import Ui_DashboardLayout
 from views.deepscan import Ui_DeepScanLayout
+from views.history import Ui_HistoryLayout
 from views.quickscan import Ui_QuickScanLayout, readJsonData
 
 
@@ -20,6 +24,7 @@ class Main(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.ui.btnQuickScan.clicked.connect(self.displayQuickScanLayout)
         self.ui.btnDeepScan.clicked.connect(self.displayDeepScanProgress)
+        self.ui.btnHistory.clicked.connect(self.displayHistoryDialog)
 
     def displayQuickScanLayout(self):
         self.main = QuickScan()
@@ -29,6 +34,11 @@ class Main(QtWidgets.QMainWindow):
     def displayDeepScanProgress(self):
         self.main = DeepScan()
         self.main.show()
+        self.close()
+
+    def displayHistoryDialog(self):
+        self.history = History()
+        self.history.show()
         self.close()
 
 
@@ -51,7 +61,6 @@ class DeepScan(QtWidgets.QMainWindow):
         self.ui = Ui_DeepScanLayout()
         self.ui.setupUi(self)
         self.progressing(0)
-        self.main = Main()
         self.ui.btnHome.clicked.connect(self.backDashboard)
         self.ui.btnCancel.clicked.connect(self.cancelDeepScan)
         self.ui.btnPause.clicked.connect(self.controlDeepScan)
@@ -145,10 +154,58 @@ def checkRegisreyExist(registryPath):
 
         k = OpenKey(registry, registryPath)
         value = QueryValueEx(k, key)
+        print("Registry Value: " + str(value))
         return True
     except Exception as e:
-        print(e)
+        # print(e)
         return False
+
+
+def deleteRegistry(registryPath):
+    try:
+        first = registryPath.find('\\')
+        rootPath = registryPath[:first]
+        registryPath = registryPath[(first + 1):]
+
+        last = registryPath.rfind('\\')
+        key = registryPath[(last + 1):]
+        registryPath = registryPath[:last]
+
+        if rootPath == 'HKEY_LOCAL_MACHINE':
+            hkey = OpenKey(HKEY_LOCAL_MACHINE, registryPath, 0, KEY_ALL_ACCESS)
+        elif rootPath == 'HKEY_CURRENT_USER':
+            hkey = OpenKey(HKEY_CURRENT_USER, registryPath, 0, KEY_ALL_ACCESS)
+        elif rootPath == 'HKEY_CLASSES_ROOT':
+            hkey = OpenKey(HKEY_CLASSES_ROOT, registryPath, 0, KEY_ALL_ACCESS)
+        elif rootPath == 'HKEY_USERS':
+            hkey = OpenKey(HKEY_USERS, registryPath, 0, KEY_ALL_ACCESS)
+        else:
+            hkey = OpenKey(HKEY_CURRENT_CONFIG, registryPath, 0, KEY_ALL_ACCESS)
+
+        DeleteValue(hkey, key)
+    except Exception as e:
+        print(e)
+
+
+def deleteFile(filePath):
+    os.remove(filePath)
+
+
+def writeHistory(newData):
+    try:
+        with open("database/history.json", "r+") as file:
+            historyLog = json.load(file)
+            if time.strftime("%Y%m%d", time.localtime()) in historyLog[len(historyLog) - 1]:
+                for item in newData:
+                    historyLog[len(historyLog) - 1][time.strftime("%Y%m%d", time.localtime())].append(item)
+            else:
+                todayData = json.loads(json.dumps({time.strftime("%Y%m%d", time.localtime()): newData}))
+                historyLog.append(todayData)
+            file.seek(0)
+            # json.dump(historyLog, file, indent=4)
+            file.close()
+    except Exception as e:
+        print(e)
 
 
 class DeepScanThread(QtCore.QThread):
@@ -165,22 +222,35 @@ class DeepScanThread(QtCore.QThread):
     def run(self):
         count = 0
         detect = 0
+        fileDetected = 0
+        registryDetected = 0
+        detectData = []
+        detectItem = []
         database = readJsonData("database/data.json")
         for data in database:
             count += 1
+            fileDetectedList = []
+            registryDetectedList = []
             for fileName in data['file_created']:
-                if checkFileExist(fileName):
-                    self.guess += 1
+                if not checkFileExist(fileName):
+                    fileDetected += 1
+                    fileDetectedList.append(fileName)
+                    # deleteFile(fileName)
 
             for registryPath in data['hkey_created']:
-                if checkRegisreyExist(registryPath):
-                    self.guess += 1
+                if not checkRegisreyExist(registryPath):
+                    registryDetected += 1
+                    registryDetectedList.append(registryPath)
+                    # deleteRegistry(registryPath)
 
-            if self.guess > 0:
-                detect += 1
+            detectItem += [{
+                'virusName': data['name'],
+                'fileDetected': fileDetectedList,
+                'registryDetected': registryDetectedList
+            }]
 
             self.progressValue.emit(int((count / len(database)) * 100))
-            self.amount_detect.emit(detect)
+            self.amount_detect.emit(fileDetected)
 
             if count == len(database):
                 self.done.emit(True)
@@ -195,6 +265,57 @@ class DeepScanThread(QtCore.QThread):
                 return
             else:
                 continue
+
+        writeHistory(detectItem)
+
+
+class History(QtWidgets.QMainWindow):
+    def __init__(self):
+        QtWidgets.QMainWindow.__init__(self)
+        self.ui = Ui_HistoryLayout()
+        self.ui.setupUi(self)
+        self.ui.tableAll.setColumnWidth(0, 150)
+        self.ui.tableAll.setColumnWidth(1, 330)
+        self.ui.tableAll.setColumnWidth(2, 330)
+        self.ui.tableAll.setSortingEnabled(True)
+
+        self.ui.btnHome.clicked.connect(self.backDashboard)
+        self.setTableAllData()
+
+    def backDashboard(self):
+        self.main = Main()
+        self.main.show()
+        self.close()
+
+    def setTableAllData(self):
+        try:
+            with open("database/history.json", "r+") as file:
+                historyLog = json.load(file)
+                self.lastDayObject = historyLog[-1]
+                self.lastDayHistory = self.lastDayObject[list(self.lastDayObject.keys())[0]]
+                print(self.lastDayHistory)
+                row = 0
+                self.ui.tableAll.setRowCount(len(self.lastDayHistory))
+                self.ui.tableAll.cellClicked.connect(self.test)
+                fileDetectedData = ''
+                registryDetectedData = ''
+                for model in self.lastDayHistory:
+                    for file in model['fileDetected']:
+                        fileDetectedData += (str(file).replace('\\', '/') + '\n')
+                    for registry in model['registryDetected']:
+                        registryDetectedData += (str(registry).replace('\\', '/') + '\n')
+                    self.ui.tableAll.setItem(row, 0, QtWidgets.QTableWidgetItem(model['virusName']))
+                    self.ui.tableAll.setItem(row, 1, QtWidgets.QTableWidgetItem(fileDetectedData))
+                    self.ui.tableAll.setItem(row, 2, QtWidgets.QTableWidgetItem(registryDetectedData))
+                    row += 1
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+            print(exc_type, fname, exc_tb.tb_lineno)
+
+    def test(self, row, column):
+        print("Row %d and Column %d was clicked" % (row, column))
+        print(*self.lastDayHistory[row]['registryDetected'], sep='\n')
 
 
 if __name__ == "__main__":

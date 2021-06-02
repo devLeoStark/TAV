@@ -237,11 +237,3 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.btnPause.setText(_translate("DeepScanLayout", "Pause"))
         self.btnCancel.setText(_translate("DeepScanLayout", "Cancel"))
 
-# if __name__ == "__main__":
-#     import sys
-#     app = QtWidgets.QApplication(sys.argv)
-#     DeepScanLayout = QtWidgets.QMainWindow()
-#     ui = Ui_DeepScanLayout()
-#     ui.setupUi(DeepScanLayout)
-#     DeepScanLayout.show()
-#     sys.exit(app.exec_())
