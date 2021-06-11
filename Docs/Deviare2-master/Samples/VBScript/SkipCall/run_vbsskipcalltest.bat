@@ -1,1 +1,0 @@
-@CScript VBSSkipCallTest.vbs

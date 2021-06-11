@@ -154,5 +154,20 @@
 		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
 		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
 	]
+  },
+  {
+    "name": "trojan",
+    "md5": "97241d1d76f228e5ea09ec1f85f67507",
+    "sha256": "0e038463f6b3e7bad599e238fd0a49fa78f4f0719a78468804270f440c545340",
+	"file_created": [
+		"C:\\Windows\\System32\\1560847240.dll",
+		"C:\\Windows\\System32\\1560847240.exe",
+		"C:\\Windows\\System32\\1561209425.dll",
+		"C:\\Windows\\System32\\1561209425.exe"
+	],
+	"hkey_created": [
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
+		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
+	]
   }
 ]

@@ -9,6 +9,7 @@
 import hashlib
 import json
 import os
+import sys
 import time
 
 import psutil as psutil
@@ -80,8 +81,7 @@ def getNumberOfFile(path):
     amount = 0
     for path, directories, files in os.walk(path):
         for file in files:
-            if file.endswith(tuple(virus_endswith_list)):
-                amount += 1
+            amount += 1
     return amount
 
 
@@ -160,7 +160,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         guess = result[:1]
         path = result[1:]
         logLine = time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime()) + ":  " + path
-        if guess == VIRUS:
+        if int(guess) == VIRUS:
             self.logBrowser.setTextColor(COLOR_RED)
         else:
             self.logBrowser.setTextColor(COLOR_GREEN)
@@ -220,7 +220,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         QuickScanLayout.setMinimumSize(QtCore.QSize(900, 600))
         QuickScanLayout.setMaximumSize(QtCore.QSize(900, 600))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("views/icons/tav_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         QuickScanLayout.setWindowIcon(icon)
         QuickScanLayout.setStyleSheet("background-color: rgb(255, 255, 255);")
         QuickScanLayout.setIconSize(QtCore.QSize(30, 30))
@@ -240,7 +240,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         font.setWeight(75)
         self.lbl_name.setFont(font)
         self.lbl_name.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.lbl_name.setStyleSheet("color: rgb(181, 61, 0);")
+        self.lbl_name.setStyleSheet("color: #c82032;")
         self.lbl_name.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.lbl_name.setObjectName("lbl_name")
         self.btnHome = QtWidgets.QPushButton(self.centralwidget)
@@ -248,7 +248,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.btnHome.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnHome.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("views/icons/home_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnHome.setIcon(icon1)
         self.btnHome.setIconSize(QtCore.QSize(40, 40))
         self.btnHome.setObjectName("btnHome")
@@ -274,7 +274,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         font.setPointSize(10)
         self.btnControl.setFont(font)
         self.btnControl.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnControl.setStyleSheet("color: rgb(181, 61, 0);")
+        self.btnControl.setStyleSheet("color: #c82032;")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("views/icons/pause_resume.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnControl.setIcon(icon3)
@@ -287,7 +287,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         font.setPointSize(10)
         self.btnClearLog.setFont(font)
         self.btnClearLog.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnClearLog.setStyleSheet("color: rgb(181, 61, 0);")
+        self.btnClearLog.setStyleSheet("color: #c82032;")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("views/icons/eraser_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnClearLog.setIcon(icon2)
@@ -299,7 +299,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         font.setPointSize(10)
         self.btnCancel.setFont(font)
         self.btnCancel.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnCancel.setStyleSheet("color: rgb(181, 61, 0);")
+        self.btnCancel.setStyleSheet("color: #c82032;")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("views/icons/cancel_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCancel.setIcon(icon3)
@@ -334,7 +334,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.optionFullScan.setFont(font)
-        self.optionFullScan.setStyleSheet("color: rgb(181, 61, 0);")
+        self.optionFullScan.setStyleSheet("color: #c82032;")
         self.optionFullScan.setChecked(True)
         self.optionFullScan.setObjectName("optionFullScan")
         self.verticalLayout.addWidget(self.optionFullScan)
@@ -345,7 +345,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.optionSpecificScan.setFont(font)
-        self.optionSpecificScan.setStyleSheet("color: rgb(181, 61, 0);")
+        self.optionSpecificScan.setStyleSheet("color: #c82032;")
         self.optionSpecificScan.setObjectName("optionSpecificScan")
         self.horizontalLayout_2.addWidget(self.optionSpecificScan)
         self.folderPath = QtWidgets.QLineEdit(self.verticalLayoutWidget)
@@ -355,7 +355,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.horizontalLayout_2.addWidget(self.folderPath)
         self.btnChooseFolder = QtWidgets.QPushButton(self.verticalLayoutWidget, clicked=lambda: self.chooseFolder())
         self.btnChooseFolder.setEnabled(True)
-        self.btnChooseFolder.setStyleSheet("color: rgb(181, 61, 0);")
+        self.btnChooseFolder.setStyleSheet("color: #c82032;")
         self.btnChooseFolder.setObjectName("btnChooseFolder")
         self.btnChooseFolder.setVisible(False)
         self.horizontalLayout_2.addWidget(self.btnChooseFolder)
@@ -373,7 +373,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         font.setWeight(75)
         self.btnScan.setFont(font)
         self.btnScan.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnScan.setStyleSheet("color: #f7931e;")
+        self.btnScan.setStyleSheet("color: #c82032;")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap("views/icons/scan.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnScan.setIcon(icon4)
@@ -407,6 +407,7 @@ def processExists(file):
     return file in (p.name() for p in psutil.process_iter())
 
 
+
 class ScanThread(QtCore.QThread):
     level = QtCore.pyqtSignal(int)
     result = QtCore.pyqtSignal(str)
@@ -428,31 +429,33 @@ class ScanThread(QtCore.QThread):
             scanPath = self.path.replace('/', '\\')
             for path, directories, files in os.walk(scanPath):
                 for file in files:
-                    if file.endswith(tuple(virus_endswith_list)):
-                        if processExists(file):
-                            print(file)
-                        filePath = os.path.join(path, file)
-                        self.scanned += 1
-                        if databaseChecking(filePath) > 0:
-                            self.guess = VIRUS
-                        self.result.emit(str(self.guess) + filePath)
-                        self.progressValue.emit(int((self.scanned / self.total) * 100))
+                    if processExists(file):
+                        print(file)
+                    filePath = os.path.join(path, file)
+                    self.scanned += 1
+                    if databaseChecking(filePath) > 0:
+                        self.guess = VIRUS
+                    self.result.emit(str(self.guess) + filePath)
+                    self.progressValue.emit(int((self.scanned / self.total) * 100))
 
-                        if self.scanned == self.total:
-                            self.done.emit(True)
-                        else:
-                            self.done.emit(False)
+                    if self.scanned == self.total:
+                        self.done.emit(True)
+                    else:
+                        self.done.emit(False)
 
-                        if self.pause:
-                            while self.pause: continue
-                        elif self.killed:
-                            return
-                        else:
-                            continue
+                    if self.pause:
+                        while self.pause: continue
+                    elif self.killed:
+                        return
+                    else:
+                        continue
         except Exception as e:
+            print("specific scan catch")
             print(e)
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+            print(exc_type, fname, exc_tb.tb_lineno)
 
     def stop(self):
         print("stopping scan thread...")
         self.terminate()
-

@@ -25,32 +25,25 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         DashboardLayout.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("views/icons/tav_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         DashboardLayout.setWindowIcon(icon)
         DashboardLayout.setAutoFillBackground(False)
         DashboardLayout.setStyleSheet("background-color: #ffffff;")
         self.centralwidget = QtWidgets.QWidget(DashboardLayout)
         self.centralwidget.setObjectName("centralwidget")
         self.lbl_logo = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_logo.setGeometry(QtCore.QRect(25, 0, 100, 100))
+        self.lbl_logo.setGeometry(QtCore.QRect(25, 0, 250, 150))
         font = QtGui.QFont()
         self.lbl_logo.setFont(font)
         self.lbl_logo.setText("")
-        self.lbl_logo.setPixmap(QtGui.QPixmap("views/icons/tav_logo.png"))
+        self.lbl_logo.setPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo_horizontal.png"))
         self.lbl_logo.setScaledContents(True)
         self.lbl_logo.setObjectName("lbl_logo")
-        self.lbl_decription = QtWidgets.QLabel(self.centralwidget)
-        self.lbl_decription.setGeometry(QtCore.QRect(0, 100, 150, 20))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
-        self.lbl_decription.setFont(font)
-        self.lbl_decription.setAutoFillBackground(False)
-        self.lbl_decription.setStyleSheet("color: rgb(181, 61, 0); color: #f7931e;")
-        self.lbl_decription.setAlignment(QtCore.Qt.AlignCenter)
-        self.lbl_decription.setObjectName("lbl_decription")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(570, 30, 298, 31))
         font = QtGui.QFont()
@@ -65,7 +58,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         self.btnOptions.setFont(font)
         self.btnOptions.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnOptions.setStyleSheet("background-color: rgb(255, 255, 255); color: #f7931e;")
+        self.btnOptions.setStyleSheet("background-color: rgb(255, 255, 255); color: #c82032;")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("views/icons/options.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnOptions.setIcon(icon1)
@@ -76,7 +69,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         self.btnAccount.setFont(font)
         self.btnAccount.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAccount.setStyleSheet("background-color: rgb(255, 255, 255); color: #f7931e;")
+        self.btnAccount.setStyleSheet("background-color: rgb(255, 255, 255); color: #c82032;")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("views/icons/personal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnAccount.setIcon(icon2)
@@ -87,7 +80,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         self.btnSettings.setFont(font)
         self.btnSettings.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnSettings.setStyleSheet("background-color: rgb(255, 255, 255); color: #f7931e;")
+        self.btnSettings.setStyleSheet("background-color: rgb(255, 255, 255); color: #c82032;")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("views/icons/setting_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnSettings.setIcon(icon3)
@@ -122,7 +115,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnQuickScan.setAutoFillBackground(False)
         self.btnQuickScan.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                         "font: 75 13pt \"Arial\";\n"
-                                        "color: rgb(181, 61, 0);")
+                                        "color: #c82032;")
         self.btnQuickScan.setInputMethodHints(QtCore.Qt.ImhNone)
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap("views/icons/quick.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -152,7 +145,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnDeepScan.setAutoFillBackground(False)
         self.btnDeepScan.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                        "font: 75 13pt \"Arial\";\n"
-                                       "color: rgb(181, 61, 0);")
+                                       "color: #c82032;")
         self.btnDeepScan.setInputMethodHints(QtCore.Qt.ImhNone)
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap("views/icons/deep.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -182,7 +175,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnSchedulerScan.setAutoFillBackground(False)
         self.btnSchedulerScan.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                             "font: 75 13pt \"Arial\";\n"
-                                            "color: rgb(181, 61, 0);")
+                                            "color: #c82032;")
         self.btnSchedulerScan.setInputMethodHints(QtCore.Qt.ImhNone)
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap("views/icons/schedule.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -212,7 +205,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnDiskCleanup.setAutoFillBackground(False)
         self.btnDiskCleanup.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                           "font: 75 13pt \"Arial\";\n"
-                                          "color: rgb(181, 61, 0);")
+                                          "color: #c82032;")
         self.btnDiskCleanup.setInputMethodHints(QtCore.Qt.ImhNone)
         icon7 = QtGui.QIcon()
         icon7.addPixmap(QtGui.QPixmap("views/icons/cleanup.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -248,7 +241,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnHistory.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnHistory.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                       "font: 75 11pt \"Arial\";\n"
-                                      "color: rgb(181, 61, 0);")
+                                      "color: #c82032;")
         icon8 = QtGui.QIcon()
         icon8.addPixmap(QtGui.QPixmap("views/icons/history.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnHistory.setIcon(icon8)
@@ -272,7 +265,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnPrivacy.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnPrivacy.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                       "font: 75 11pt \"Arial\";\n"
-                                      "color: rgb(181, 61, 0);")
+                                      "color: #c82032;")
         icon9 = QtGui.QIcon()
         icon9.addPixmap(QtGui.QPixmap("views/icons/privacy.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnPrivacy.setIcon(icon9)
@@ -296,7 +289,7 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnSupport.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnSupport.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                       "font: 75 11pt \"Arial\";\n"
-                                      "color: rgb(181, 61, 0);")
+                                      "color: #c82032;")
         icon10 = QtGui.QIcon()
         icon10.addPixmap(QtGui.QPixmap("views/icons/support.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnSupport.setIcon(icon10)
@@ -315,7 +308,6 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
     def retranslateUi(self, DashboardLayout):
         _translate = QtCore.QCoreApplication.translate
         DashboardLayout.setWindowTitle(_translate("DashboardLayout", "VKU Antivirus"))
-        self.lbl_decription.setText(_translate("DashboardLayout", "VKU Antivirus"))
         self.btnOptions.setText(_translate("DashboardLayout", "Options"))
         self.btnAccount.setText(_translate("DashboardLayout", "Account"))
         self.btnSettings.setText(_translate("DashboardLayout", "Settings"))

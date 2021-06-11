@@ -16,7 +16,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         DeepScanLayout.setObjectName("DeepScanLayout")
         DeepScanLayout.resize(900, 600)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("views/icons/tav_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         DeepScanLayout.setWindowIcon(icon)
         DeepScanLayout.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(DeepScanLayout)
@@ -26,7 +26,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.btnHome.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnHome.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("views/icons/home_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnHome.setIcon(icon1)
         self.btnHome.setIconSize(QtCore.QSize(40, 40))
         self.btnHome.setObjectName("btnHome")
@@ -38,7 +38,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font.setWeight(75)
         self.lbl_name.setFont(font)
         self.lbl_name.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.lbl_name.setStyleSheet("color: rgb(181, 61, 0);")
+        self.lbl_name.setStyleSheet("color: #c82032;")
         self.lbl_name.setAlignment(QtCore.Qt.AlignCenter)
         self.lbl_name.setObjectName("lbl_name")
         self.lbl_icon = QtWidgets.QLabel(self.centralwidget)
@@ -119,7 +119,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font.setPointSize(13)
         self.lbTitle.setFont(font)
         self.lbTitle.setStyleSheet("background-color: none;\n"
-                                   "color: rgb(181, 61, 0);")
+                                   "color: #c82032;")
         self.lbTitle.setAlignment(QtCore.Qt.AlignCenter)
         self.lbTitle.setObjectName("lbTitle")
         self.lbPercentage = QtWidgets.QLabel(self.container)
@@ -129,7 +129,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font.setPointSize(60)
         self.lbPercentage.setFont(font)
         self.lbPercentage.setStyleSheet("background-color: none;\n"
-                                        "color: rgb(247, 147, 30);")
+                                        "color: #f7961e;")
         self.lbPercentage.setAlignment(QtCore.Qt.AlignCenter)
         self.lbPercentage.setObjectName("lbPercentage")
         self.lbDeleted = QtWidgets.QLabel(self.container)
@@ -138,7 +138,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.lbDeleted.setFont(font)
-        self.lbDeleted.setStyleSheet("color:rgb(181, 61, 0);\n"
+        self.lbDeleted.setStyleSheet("color:#c82032;\n"
                                       "background-color: none;")
         self.lbDeleted.setAlignment(QtCore.Qt.AlignCenter)
         self.lbDeleted.setObjectName("lbDeleted")
@@ -148,7 +148,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.lbDetected.setFont(font)
-        self.lbDetected.setStyleSheet("color:rgb(181, 61, 0);\n"
+        self.lbDetected.setStyleSheet("color:#c82032;\n"
                                       "background-color: none;")
         self.lbDetected.setAlignment(QtCore.Qt.AlignCenter)
         self.lbDetected.setObjectName("lbDetected")
@@ -163,7 +163,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lbScanning.setFont(font)
-        self.lbScanning.setStyleSheet("color:rgb(181, 61, 0);\n"
+        self.lbScanning.setStyleSheet("color:#c82032;\n"
                                       "background-color: none;")
         self.lbScanning.setAlignment(QtCore.Qt.AlignCenter)
         self.lbScanning.setObjectName("lbScanning")
@@ -184,7 +184,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font.setPointSize(10)
         self.btnPause.setFont(font)
         self.btnPause.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnPause.setStyleSheet("color: rgb(181, 61, 0);")
+        self.btnPause.setStyleSheet("color: #c82032;")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("views/icons/pause_resume.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnPause.setIcon(icon2)
@@ -200,7 +200,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font.setPointSize(10)
         self.btnCancel.setFont(font)
         self.btnCancel.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnCancel.setStyleSheet("color: rgb(181, 61, 0);")
+        self.btnCancel.setStyleSheet("color: #c82032;")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("views/icons/cancel_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCancel.setIcon(icon3)
@@ -228,7 +228,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.pushButton.setText(_translate("DeepScanLayout", "PushButton"))
         self.pushButton_2.setText(_translate("DeepScanLayout", "PushButton"))
         self.lbTitle.setText(_translate("DeepScanLayout",
-                                        "<html><head/><body><p><span style=\" font-weight:600; color:rgb(181, 61, 0);\">DEEP SCAN</span></p></body></html>"))
+                                        "<html><head/><body><p><span style=\" font-weight:600; color:#c82032;\">DEEP SCAN</span></p></body></html>"))
         self.lbPercentage.setText(_translate("DeepScanLayout",
                                              "<html><head/><body><p>100<span style=\" font-size:58pt; vertical-align:super;\">%</span></p></body></html>"))
         self.lbDetected.setText(_translate("DeepScanLayout", "Detected: 0"))
