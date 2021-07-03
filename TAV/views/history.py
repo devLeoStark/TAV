@@ -15,15 +15,18 @@ class Ui_HistoryLayout(object):
     def setupUi(self, HistoryLayout):
         HistoryLayout.setObjectName("HistoryLayout")
         HistoryLayout.resize(900, 600)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(HistoryLayout.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            HistoryLayout.sizePolicy().hasHeightForWidth())
         HistoryLayout.setSizePolicy(sizePolicy)
         HistoryLayout.setMinimumSize(QtCore.QSize(900, 600))
         HistoryLayout.setMaximumSize(QtCore.QSize(900, 600))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(
+            "views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         HistoryLayout.setWindowIcon(icon)
         HistoryLayout.setStyleSheet("background-color: rgb(255, 255, 255);")
         HistoryLayout.setIconSize(QtCore.QSize(30, 30))
@@ -51,7 +54,8 @@ class Ui_HistoryLayout(object):
         self.btnHome.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnHome.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(
+            "views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnHome.setIcon(icon1)
         self.btnHome.setIconSize(QtCore.QSize(40, 40))
         self.btnHome.setObjectName("btnHome")
@@ -64,10 +68,12 @@ class Ui_HistoryLayout(object):
         self.tabAll.setObjectName("tabAll")
         self.tableAll = QtWidgets.QTableWidget(self.tabAll)
         self.tableAll.setGeometry(QtCore.QRect(0, 0, 871, 461))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.tableAll.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.tableAll.sizePolicy().hasHeightForWidth())
         self.tableAll.setSizePolicy(sizePolicy)
         self.tableAll.setObjectName("tableAll")
         self.tableAll.setColumnCount(3)
@@ -78,7 +84,8 @@ class Ui_HistoryLayout(object):
         font.setWeight(75)
         item.setFont(font)
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("views/icons/bug.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("views/icons/bug.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         item.setIcon(icon2)
         self.tableAll.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -87,7 +94,8 @@ class Ui_HistoryLayout(object):
         font.setWeight(75)
         item.setFont(font)
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("views/icons/file.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("views/icons/file.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         item.setIcon(icon3)
         self.tableAll.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
@@ -96,7 +104,8 @@ class Ui_HistoryLayout(object):
         font.setWeight(75)
         item.setFont(font)
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("views/icons/registry.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("views/icons/registry.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         item.setIcon(icon4)
         self.tableAll.setHorizontalHeaderItem(2, item)
         self.HistoryTabBar.addTab(self.tabAll, "")
@@ -181,12 +190,14 @@ class Ui_HistoryLayout(object):
         item.setText(_translate("HistoryLayout", "File Detected"))
         item = self.tableAll.horizontalHeaderItem(2)
         item.setText(_translate("HistoryLayout", "Registry Detected"))
-        self.HistoryTabBar.setTabText(self.HistoryTabBar.indexOf(self.tabAll), _translate("HistoryLayout", "All"))
-        self.HistoryTabBar.setTabText(self.HistoryTabBar.indexOf(self.tab_Malware), _translate("HistoryLayout", "Malware"))
-        self.HistoryTabBar.setTabText(self.HistoryTabBar.indexOf(self.tabStatistics), _translate("HistoryLayout", "Statistics"))
+        self.HistoryTabBar.setTabText(self.HistoryTabBar.indexOf(
+            self.tabAll), _translate("HistoryLayout", "All"))
+        self.HistoryTabBar.setTabText(self.HistoryTabBar.indexOf(
+            self.tab_Malware), _translate("HistoryLayout", "Malware"))
+        self.HistoryTabBar.setTabText(self.HistoryTabBar.indexOf(
+            self.tabStatistics), _translate("HistoryLayout", "Statistics"))
         self.lbDate.setText(_translate("HistoryLayout", "Date:"))
         self.lbDeleted.setText(_translate("HistoryLayout", "Deleted:"))
         self.lbAmountDeleted.setText(_translate("HistoryLayout", "0"))
         self.lbDetected.setText(_translate("HistoryLayout", "Detected:"))
         self.lbAmountDetected.setText(_translate("HistoryLayout", "0"))
-

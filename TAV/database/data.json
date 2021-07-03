@@ -3,171 +3,511 @@
     "name": "mooze",
     "md5": "efc05e673dc516a6a96bc346dc7c93a6",
     "sha256": "855e3aa2a4b8432f5a2b77a6aa2635ae8382ca6df76b4c0d7405856faa7b5b5b",
-	"file_created": [
-		"C:\\Windows\\System32\\Pbt32.exe"
-	],
-	"hkey_created": ["HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Pbt32"]
+    "file_created": [
+      "C:\\Windows\\System32\\Pbt32.exe"
+    ],
+    "hkey_created": [
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Pbt32"
+    ]
   },
   {
     "name": "artemis",
     "md5": "caff801a280d42dbd1ad6b1266d3c43a",
     "sha256": "834d1dbfab8330ea5f1844f6e905ed0ac19d1033ee9a9f1122ad2051c56783dc",
-	"file_created": [
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\TsuE367CCF9.dll",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\996E.log",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A.dat",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\_Setup.dll",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Setup.ico",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Readme.txt",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Setup.exe",
-		"C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\_Setup.dll",
-		"C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\Setup.ico",
-		"C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\Readme.txt"
-	],
-	"hkey_created": ["HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SharedDlls\\C:\\WINDOWS\\system32\\ChilkatMail_v8.dll"]
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\TsuE367CCF9.dll",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\996E.log",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A.dat",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\_Setup.dll",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Setup.ico",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Readme.txt",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\5641584A\\Setup.exe",
+      "C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\_Setup.dll",
+      "C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\Setup.ico",
+      "C:\\Documents and Settings\\All Users\\Application Data\\InstallMate\\{1E453EA8-BB42-419D-8067-D2477A36B761}\\Readme.txt"
+    ],
+    "hkey_created": [
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SharedDlls\\C:\\WINDOWS\\system32\\ChilkatMail_v8.dll"
+    ]
   },
   {
     "name": "huer",
     "md5": "42914d6d213a20a2684064be5c80ffa9",
     "sha256": "abce729b892c9784dd9e9a89999a4bc64da9398b4fa46b0efcc60dd91a4eab69",
-	"file_created": [
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\rsb.exe",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
-		"C:\\Documents and Settings\\All Users\\Application Data\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
-		"C:\\Documents and Settings\\Administrator\\Templates\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\xno.exe",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\uyx.exe"
-	],
-	"hkey_created": [
-	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\DoNotAllowExceptions",
-	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\DisableNotifications",
-	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall",
-	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\DoNotAllowExceptions",
-	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\DisableNotifications",
-	"HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Start",
-	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\AntiVirusDisableNotify",
-	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\AntiVirusOverride",
-	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\FirewallDisableNotify",
-	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\FirewallOverride"
-	]
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\rsb.exe",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
+      "C:\\Documents and Settings\\All Users\\Application Data\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
+      "C:\\Documents and Settings\\Administrator\\Templates\\bf3i8l7j0g828in38xq5v35m48hxmjxjg",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\xno.exe",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Application Data\\uyx.exe"
+    ],
+    "hkey_created": [
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\DoNotAllowExceptions",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\StandardProfile\\DisableNotifications",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\EnableFirewall",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\DoNotAllowExceptions",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Parameters\\FirewallPolicy\\DomainProfile\\DisableNotifications",
+      "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet002\\Services\\SharedAccess\\Start",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\AntiVirusDisableNotify",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\AntiVirusOverride",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\FirewallDisableNotify",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\FirewallOverride"
+    ]
   },
   {
     "name": "xema",
     "md5": "b1df147a13c497d3387cc61741bfa44d",
     "sha256": "118bd656132a06341d0e7428dc82e2e5a4ee539372316cb397533468457af22d",
-	"file_created": [
-		""
-	],
-	"hkey_created": [
-	"HKEY_CURRENT_USER\\Software\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows Script\\Settings\\JITDebug",
-	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\0800277A0DD3"
-	]
+    "file_created": [
+      ""
+    ],
+    "hkey_created": [
+      "HKEY_CURRENT_USER\\Software\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows Script\\Settings\\JITDebug",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\0800277A0DD3"
+    ]
   },
   {
     "name": "scar",
     "md5": "6de84d91cbacb4e9c7ba1cc5e2a52362",
     "sha256": "9e0c326e7d4e5d480b7eadd7eebb78f2e6ed12da8ae61c049d4b242f46a8566a",
-	"file_created": [
-		"C:\\Documents and Settings\\Administrator\\wupdte002.txt",
-		"C:\\Documents and Settings\\Administrator\\wupdte002.com"
-	],
-	"hkey_created": [
-	"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\AutoConfigURL",
-	"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\wsysfxs"
-	]
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\wupdte002.txt",
+      "C:\\Documents and Settings\\Administrator\\wupdte002.com"
+    ],
+    "hkey_created": [
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\AutoConfigURL",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\wsysfxs"
+    ]
   },
   {
     "name": "buterat",
     "md5": "f7198035cce341240181d005c7b022e0",
     "sha256": "2aa04981d8ef2078ffc1ae9c1c1f3a0c1a5dcab9c1739d98fabe5ac00fb6f856",
-	"file_created": [
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\2.tmp",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\3.tmp",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\4.tmp",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\~TM5.tmp",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\~TM6.tmp",
-		"C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\7.tmp"
-
-	],
-	"hkey_created": [
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultCount",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultTime",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\CPC\\Volume\\{61066b64-7a09-11e4-91b2-806d6172696f}\\Generation",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\CPC\\Volume\\{67ff5543-c5c9-11e0-9f6d-806d6172696f}\\Generation",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Cached\\{2559A1F4-21D7-11D4-BDAF-00C04F60B9F0} {000214E6-0000-0000-C000-000000000046} 0x401",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Cached\\{2559A1F5-21D7-11D4-BDAF-00C04F60B9F0} {000214E6-0000-0000-C000-000000000046} 0x401",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\SessionInformation\\ProgramCount",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Discardable\\PostSetup\\Component Categories\\{00021493-0000-0000-C000-000000000046}\\Enum\\Implementing",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultTime",
-		"HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\SessionInformation\\ProgramCount"
-	]
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\2.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\3.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\4.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\~TM5.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\~TM6.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\7.tmp"
+    ],
+    "hkey_created": [
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultCount",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultTime",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\CPC\\Volume\\{61066b64-7a09-11e4-91b2-806d6172696f}\\Generation",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\CPC\\Volume\\{67ff5543-c5c9-11e0-9f6d-806d6172696f}\\Generation",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Cached\\{2559A1F4-21D7-11D4-BDAF-00C04F60B9F0} {000214E6-0000-0000-C000-000000000046} 0x401",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Cached\\{2559A1F5-21D7-11D4-BDAF-00C04F60B9F0} {000214E6-0000-0000-C000-000000000046} 0x401",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\SessionInformation\\ProgramCount",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Discardable\\PostSetup\\Component Categories\\{00021493-0000-0000-C000-000000000046}\\Enum\\Implementing",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultTime",
+      "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\SessionInformation\\ProgramCount"
+    ]
   },
   {
     "name": "delf",
     "md5": "9390c3e1001d5231795482d2e00026e3",
     "sha256": "3940df71469a1d73f9fdaff09881995ad8d7b8f840c14168c00ce98f632718b7",
-	"file_created": [
-		"C:\\WINDOWS\\system32\\svchosts.exe"
-	],
-	"hkey_created": ["HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SysTry"]
+    "file_created": [
+      "C:\\WINDOWS\\system32\\svchosts.exe"
+    ],
+    "hkey_created": [
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SysTry"
+    ]
   },
   {
     "name": "dialer",
     "md5": "2f0f35cc352b5d6fee61ab69be50738f",
     "sha256": "14514563ff2d7f916f48bfcffa996b7b5f5b6fd930d3584f8f57733cb1cf9c5b",
-	"file_created": [
-		""
-	],
-	"hkey_created": [
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\warn",
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\SVersion",
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime",
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\security",
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime",
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime"
-
-	]
+    "file_created": [
+      ""
+    ],
+    "hkey_created": [
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\warn",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\SVersion",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\security",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime"
+    ]
   },
   {
     "name": "zusy",
     "md5": "176296fa3ac304b7306328b16e6ae23a",
     "sha256": "ad4d936868a828df4544471be94056c64981131e6c0ea4a1adad25ed0f0de041",
-	"file_created": [
-		"C:\\Documents and Settings\\All Users\\Application Data\\Microsoft\\Dr Watson\\drwtsn32.log"
-	],
-	"hkey_created": [
-		""
-	]
+    "file_created": [
+      "C:\\Documents and Settings\\All Users\\Application Data\\Microsoft\\Dr Watson\\drwtsn32.log"
+    ],
+    "hkey_created": [
+      ""
+    ]
   },
   {
     "name": "hukle",
     "md5": "3054eacbfe7f1e061b0c23ea2de38507",
     "sha256": "b1b33a1aa88b3fd873a277e4e6df88bb797b578aef33741ef1e13ca40bd4520c",
-	"file_created": [
-		"C:\\Windows\\System32\\1560847240.dll",
-		"C:\\Windows\\System32\\1560847240.exe",
-		"C:\\Windows\\System32\\1561209425.dll",
-		"C:\\Windows\\System32\\1561209425.exe"
-	],
-	"hkey_created": [
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
-	]
+    "file_created": [
+      "C:\\Windows\\System32\\1560847240.dll",
+      "C:\\Windows\\System32\\1560847240.exe",
+      "C:\\Windows\\System32\\1561209425.dll",
+      "C:\\Windows\\System32\\1561209425.exe"
+    ],
+    "hkey_created": [
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
+    ]
   },
   {
-    "name": "trojan",
-    "md5": "97241d1d76f228e5ea09ec1f85f67507",
-    "sha256": "0e038463f6b3e7bad599e238fd0a49fa78f4f0719a78468804270f440c545340",
-	"file_created": [
-		"C:\\Windows\\System32\\1560847240.dll",
-		"C:\\Windows\\System32\\1560847240.exe",
-		"C:\\Windows\\System32\\1561209425.dll",
-		"C:\\Windows\\System32\\1561209425.exe"
-	],
-	"hkey_created": [
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
-		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
-	]
+    "name": "NSIS:Downloader-OZ [Trj]",
+    "md5": "00f538c3d410822e241486ca061a57ee",
+    "sha256": "4f1ff9bdef6d0b2ece7775e3adae50ac75daeff126faefe81810830d485f934c",
+    "file_created": [
+      "C:\\Users\\<USER>\\AppData\\Local\\Temp\\nsfFFF4.tmp\\FindProcDLL.dll",
+      "C:\\Program Files (x86)\\jishu_144601\\FlashIcon.ico",
+      "C:\\Program Files (x86)\\jishu_144601\\dailytips.ini",
+      "C:\\Program Files (x86)\\jishu_144601\\newnew.exe",
+      "C:\\Program Files (x86)\\jishu_144601\\newnew.ini",
+      "C:\\Program Files (x86)\\jishu_144601\\ImgCache\\www.2144.net_favicon.ico",
+      "C:\\Program Files (x86)\\jishu_144601\\sc\\126ÍøÖ·´óÈ«ÉÏÍø×î·½±ã.url",
+      "C:\\Program Files (x86)\\jishu_144601\\sc\\2144Ð¡ÓÎÏ·--³¬¼¶ºÃÍæ£¬ÀÖºÇºÇ.url",
+      "C:\\Program Files (x86)\\jishu_144601\\sc\\GoogleËÑË÷.url",
+      "C:\\Program Files (x86)\\jishu_144601\\sc\\²ÊÆ±¿ª½±²éÑ¯-ÔÚÏßÂò²ÊÆ±.url",
+      "C:\\Program Files (x86)\\jishu_144601\\sc\\»Æ¹ÏµçÓ°Íø-ÔÚÏßµçÓ°.url",
+      "C:\\Program Files (x86)\\jishu_144601\\sc\\Ã¿ÌìÍÅ¹ºÒ»ÏÂ-¾Û±ãÒË.url ",
+      "C:\\Program Files (x86)\\jishu_144601\\sc\\ÍøÉÏ¹ºÎïÍøÖ·´óÈ«-Íø¹ºµÚÒ»Õ¾.url",
+      "C:\\Users\\Public\\Desktop\\ Intornot Exploror.lnk",
+      "C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Internet Explorer\\Quick Launch\\ Intornot Exploror .lnk"
+    ],
+    "hkey_created": [
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\UNCAsIntranet",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\AutoDetect"
+    ]
+  },
+  {
+    "name": "Trojan/Generic.ASMalwS.23E0B83",
+    "md5": "3f066dd1f1da052248aed5abc4a0c6a1",
+    "sha256": "15c0f4e0bb74893b20326f871aa29ac9bf7f79ca437416e2d45f679722517d8d",
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\EB93A6\\996E.exe"
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Trojan.StartPage.ZRC",
+    "md5": "781770fda3bd3236d0ab8274577dddde",
+    "sha256": "32f01153ffc9f0fafcf6fb39f6b30e1e67ac99478e7eace314358a97ed0de032",
+    "file_created": [
+    ],
+    "hkey_created": [
+      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows Script Host",
+      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows Script Host\\Settings"
+    ]
+  },
+  {
+    "name": "Trojan.Win32.Wootbot.m!c",
+    "md5": "86b6c59aa48a69e16d3313d982791398",
+    "sha256": "570eab9ce89db496a22196746cdcc68d5924abed65655bd4042b14306eadd98f",
+    "file_created": [
+      "C:\\WINDOWS\\system32\\msvc32.exe"
+    ],
+    "hkey_created": [
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\MySLScan",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\MySLScan",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\MySLScan",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\MySLScan",
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\UNCAsIntranet",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunServices\\MySLScan",
+      "\\REGISTRY\\USER\\.DEFAULT\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\MySLScan",
+      "\\REGISTRY\\USER\\.DEFAULT\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\MySLScan"
+    ]
+  },
+  {
+    "name": "Trojan.JS.QFG",
+    "md5": "999eb1840c209aa70a84c5cf64909e5f",
+    "sha256": "12e2d8d46f7b5127a660f2f697daeb68db2331f81d4c9bb41e83da6840a71e39",
+    "file_created": [
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Gen:Trojan.Keylogger.bOWbaa7Gt6p",
+    "md5": "12c4201fe1db96a1a1711790b52a3cf9",
+    "sha256": "b7ffc2249eb34ef67d6931f1d5715dd4655ab7fa3b073272afbc16585608f896",
+    "file_created": [
+      "C:\\Windows\\uklg.exe"
+    ],
+    "hkey_created": [
+      "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ukeyl",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Canab\\Copied",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\MTimes\\Warned"
+    ]
+  },
+  {
+    "name": "Trojan[Downloader]/Win32.Agent",
+    "md5": "427988b7f16152b0961e20d710f0509d",
+    "sha256": "99e976a7811253e815db64e21163e6ca7be31cdf72e4fb0f8ee92ffa51c0e604",
+    "file_created": [
+      "C:\\Windows\\uklg.exe"
+    ],
+    "hkey_created": [
+      "\\Registry\\MACHINE\\System\\CurrentControlSet\\Control\\SafeBoot\\Option",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Safer\\CodeIdentifiers\\TransparentEnabled",
+      "\\REGISTRY\\MACHINE\\SYSTEM\\ControlSet002\\Services\\WinSock2\\Parameters\\Protocol_Catalog9\\00000007"
+    ]
+  },
+  {
+    "name": "Generic.Startpage.9.4F2D2A2A",
+    "md5": "1947b44cc6f64e565d8a4215bc655315",
+    "sha256": "466bb157f72c7f5f559a0388d12b1de935ec5078fc4ad1994f961e20eb50bed8",
+    "file_created": [
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Generic.Malware.S!dld!g.4E54CEFA",
+    "md5": "8f80cf878a3e05c06c9d03646443e41d",
+    "sha256": "99e976a7811253e815db64e21163e6ca7be31cdf72e4fb0f8ee92ffa51c0e604",
+    "file_created": [
+      "C:\\WINDOWS\\msreg.exe",
+      "C:\\WINDOWS\\system32\\svchosts.exe",
+      "C:\\WINDOWS\\system32\\spec.cfg"
+    ],
+    "hkey_created": [
+      "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Online Service"
+    ]
+  },
+  {
+    "name": "Worm.Win32.WBNA.luev",
+    "md5": "aa73b43084e93e741552e5b9c8dee457",
+    "sha256": "a5a19b740703c692a4c0ab8f9560b982d9dacdf90ed899ae0117084547e504e9",
+    "file_created": [
+    ],
+    "hkey_created": [
+      "Software\\Microsoft\\Windows\\CurrentVersion\\Run\\vpwol",
+      "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ShowSuperHidden"
+    ]
+  },
+  {
+    "name": "Gen:Variant.Symmi.59752",
+    "md5": "6de84d91cbacb4e9c7ba1cc5e2a52362",
+    "sha256": "9e0c326e7d4e5d480b7eadd7eebb78f2e6ed12da8ae61c049d4b242f46a8566a",
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\wupdte002.txt",
+      "C:\\Documents and Settings\\Administrator\\wupdte002.com"
+    ],
+    "hkey_created": [
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\wsysfxs",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\AutoConfigURL"
+    ]
+  },
+  {
+    "name": "Trojan.GenericKD.1906259",
+    "md5": "9a6229ebc128e7c9619409827da7a621",
+    "sha256": "3b6b94e3cfde95e8bfa8d3f04503489fce38dd3c4547834efc74e261543cb1ec",
+    "file_created": [
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Gen:Heur.Crifi.1",
+    "md5": "526ae1b5f10eccfa069f4fd1c8b18097",
+    "sha256": "a887fc2c6e4cae38303a1e9f253e3df407f8c6e5193ddadda6ba8d9afc216734",
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\IXP000.TMP\\.Download-Server.exe",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\IXP000.TMP\\Keygen.exe",
+      "C:\\Documents and Settings\\Administrator\\「开始」菜单\\程序\\启动\\88F17.exe.exe",
+      "C:\\WINDOWS\\E88D4.exe",
+      "C:\\WINDOWS\\Temp\\scs2.tmp",
+      "C:\\WINDOWS\\Temp\\scs3.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\IXP000.TMP\\tmp2.txt",
+      "C:\\Documents and Settings\\Administrator\\「开始」菜单\\程序\\启动\\0CD36.exe.exe",
+      "C:\\Documents and Settings\\Administrator\\「开始」菜单\\程序\\启动\\2F889.exe.exe"
+    ],
+    "hkey_created": [
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\wextract_cleanup0",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Connections\\SavedLegacySettings",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Internet Explorer\\Main\\Window_Placement",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\{18DF081C-E8AD-4283-A596-FA578C2EBDC3}\\iexplore\\Count",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\{18DF081C-E8AD-4283-A596-FA578C2EBDC3}\\iexplore\\Time",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Connections\\SavedLegacySettings",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{5E6AB780-7743-11CF-A12B-00AA004AE837}\\Count\\HRZR_PGYFRFFVBA",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\{18DF081C-E8AD-4283-A596-FA578C2EBDC3}\\iexplore\\Time",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist\\{5E6AB780-7743-11CF-A12B-00AA004AE837}\\Count\\HRZR_PGYFRFFVBA",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\ShellNoRoam\\BagMRU\\MRUListEx"
+    ]
+  },
+  {
+    "name": "Trojan.Generic.6674191",
+    "md5": "f7198035cce341240181d005c7b022e0",
+    "sha256": "2aa04981d8ef2078ffc1ae9c1c1f3a0c1a5dcab9c1739d98fabe5ac00fb6f856",
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\2.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\3.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\4.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\~TM5.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\~TM6.tmp",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\7.tmp"
+    ],
+    "hkey_created": [
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultCount",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultTime",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2\\CPC\\Volume\\{61066b64-7a09-11e4-91b2-806d6172696f}\\Generation",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Cached\\{2559A1F4-21D7-11D4-BDAF-00C04F60B9F0} {000214E6-0000-0000-C000-000000000046} 0x401",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Shell Extensions\\Cached\\{2559A1F5-21D7-11D4-BDAF-00C04F60B9F0} {000214E6-0000-0000-C000-000000000046} 0x401",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\SessionInformation\\ProgramCount",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Discardable\\PostSetup\\Component Categories\\{00021493-0000-0000-C000-000000000046}\\Enum\\Implementing"
+    ]
+  },
+  {
+    "name": "Trojan.Win32.Fosniw.l5dT",
+    "md5": "9a6229ebc128e7c9619409827da7a621",
+    "sha256": "3b6b94e3cfde95e8bfa8d3f04503489fce38dd3c4547834efc74e261543cb1ec",
+    "file_created": [
+      "C:\\WINDOWS\\system32\\locarxjh.sls"
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Trojan.BabyDel.A",
+    "md5": "5ac2992ba6a5227a8975cc0d1ace992f",
+    "sha256": "3139d054e55a6bd2ecfe76f8c027c029e0bc7da10119653474bb96159aae8a2a",
+    "file_created": [
+      "C:\\Windows\\system32\\wbem\\wmiprvse.exe -Embedding"
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Trojan-Downloader.Win32.Monurl.gen",
+    "md5": "ebbd225e6fd4eaa7189423a4b17065b3",
+    "sha256": "33ec6d3a48c20c7a409c02bf203483ab3310c9050d02535a90407dff95072541",
+    "file_created": [
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\EB93A6\\mstool.exe",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\EB93A6\\runsvc32.exe",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\EB93A6\\d.exe",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\EB93A6\\twamp0d1.exe",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\EB93A6\\slx.exe",
+      "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\EB93A6\\runsvc.exe"
+    ],
+    "hkey_created": [
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Connections\\SavedLegacySettings"
+    ]
+  },
+  {
+    "name": "Trojan.Spy.Delf.FJ",
+    "md5": "9390c3e1001d5231795482d2e00026e3",
+    "sha256": "3940df71469a1d73f9fdaff09881995ad8d7b8f840c14168c00ce98f632718b7",
+    "file_created": [
+      "C:\\WINDOWS\\system32\\svchosts.exe"
+    ],
+    "hkey_created": [
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SysTry"
+    ]
+  },
+  {
+    "name": "Trojan.Dialer.LD",
+    "md5": "2f0f35cc352b5d6fee61ab69be50738f",
+    "sha256": "14514563ff2d7f916f48bfcffa996b7b5f5b6fd930d3584f8f57733cb1cf9c5b",
+    "file_created": [
+    ],
+    "hkey_created": [
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\warn",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\SVersion",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\security",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime"
+    ]
+  },
+  {
+    "name": "Gen:Variant.Johnnie.178069",
+    "md5": "176296fa3ac304b7306328b16e6ae23a",
+    "sha256": "ad4d936868a828df4544471be94056c64981131e6c0ea4a1adad25ed0f0de041",
+    "file_created": [
+      "C:\\Documents and Settings\\All Users\\Application Data\\Microsoft\\Dr Watson\\drwtsn32.log"
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Gen:Trojan.AV-Killer.dmHfamvEETe",
+    "md5": "3054eacbfe7f1e061b0c23ea2de38507",
+    "sha256": "b1b33a1aa88b3fd873a277e4e6df88bb797b578aef33741ef1e13ca40bd4520c",
+    "file_created": [
+      "C:\\Windows\\System32\\1560847240.dll",
+      "C:\\Windows\\System32\\1560847240.exe",
+      "%system%\\1560847240.dll",
+      "%system%\\1560847240.exe",
+      "C:\\Windows\\System32\\1561209425.dll",
+      "C:\\Windows\\System32\\1561209425.exe",
+      "%system%\\1561209425.dll",
+      "%system%\\1561209425.exe"
+    ],
+    "hkey_created": [
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
+    ]
+  },
+  {
+    "name": "Trojan.Generic.6292950",
+    "md5": "568e8a988387659dae05b560ccbb24f8",
+    "sha256": "b9da8ec8b0493ea7bd3c69f7060d3224632c38e6e7a0d240409d9a1a3a3f22b7",
+    "file_created": [
+      "C:\\Program Files\\Internet Explorer\\Internetapi.dll"
+    ],
+    "hkey_created": [
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Classes\\Internetapi.Tbdbho",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Classes\\Internetapi.Tbdbho\\Clsid\\ ",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Classes\\CLSID\\{A692062A-11A1-461B-BE98-B520F01F96FC}\\ProgID\\ ",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Browser Helper Objects\\{A692062A-11A1-461B-BE98-B520F01F96FC}\\ ",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\5.0\\User Agent\\Compatible ",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\360Safe\\safemon\\ExecAccess",
+      "\\REGISTRY\\MACHINE\\SOFTWARE\\360Safe\\safemon\\MonAccess",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\ShellNoRoam\\BagMRU\\MRUListEx",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\{18DF081C-E8AD-4283-A596-FA578C2EBDC3}\\iexplore\\Count",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\{18DF081C-E8AD-4283-A596-FA578C2EBDC3}\\iexplore\\Time",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\{A692062A-11A1-461B-BE98-B520F01F96FC}\\iexplore\\Type",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\{A692062A-11A1-461B-BE98-B520F01F96FC}\\iexplore\\Count",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\{A692062A-11A1-461B-BE98-B520F01F96FC}\\iexplore\\Time",
+      "\\REGISTRY\\USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Connections\\SavedLegacySettings"
+    ]
+  },
+  {
+    "name": "Trojan.Generic.2142180",
+    "md5": "249d5ebea5c02cb1811b1958f4d4c32d",
+    "sha256": "feb2546ed1219c8ec1783292d2777145fdae39f26a3333a2b41688daaea4e8bd",
+    "file_created": [
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Trojan.Win32.Hupigon.m!c",
+    "md5": "5c269c9ec0255bbd9f4e20420233b1a7",
+    "sha256": "f9997cc62f9e5c15f4db39de4dc26341e5c0f4595cc9b42cf299dd33d11cf3cd",
+    "file_created": [
+    ],
+    "hkey_created": [
+    ]
+  },
+  {
+    "name": "Trojan.Downloader.WebDown.2.0",
+    "md5": "0955924ebc1876f0b849b3b9e45ed49d",
+    "sha256": "f4dde880a3004edbfd850f3020753ae996cce392fff44f573cd86926134bf7be",
+    "file_created": [
+      "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\~DF942FA56A682426BC.TMP",
+      "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\~DF51801DBF1FFC47A9.TMP"
+    ],
+    "hkey_created": [
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SQMClient\\Windows\\AdaptiveSqm\\ManifestInfo\\Version",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SQMClient\\Windows\\WSqmConsLastEventTimeStamp",
+      "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\SQMClient\\Windows\\WSqmConsLastRunTime"
+    ]
   }
 ]

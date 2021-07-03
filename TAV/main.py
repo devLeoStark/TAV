@@ -113,7 +113,8 @@ class DeepScan(QtWidgets.QMainWindow):
             stop_2 = str(progress)
 
             # SET VALUES TO NEW STYLESHEET
-            newStylesheet = styleSheet.replace("{STOP_1}", stop_1).replace("{STOP_2}", stop_2)
+            newStylesheet = styleSheet.replace(
+                "{STOP_1}", stop_1).replace("{STOP_2}", stop_2)
 
             # APPLY STYLESHEET WITH NEW VALUES
             self.ui.circularProgress.setStyleSheet(newStylesheet)
@@ -184,7 +185,8 @@ def deleteRegistry(registryPath):
         elif rootPath == 'HKEY_USERS':
             hkey = OpenKey(HKEY_USERS, registryPath, 0, KEY_ALL_ACCESS)
         else:
-            hkey = OpenKey(HKEY_CURRENT_CONFIG, registryPath, 0, KEY_ALL_ACCESS)
+            hkey = OpenKey(HKEY_CURRENT_CONFIG,
+                           registryPath, 0, KEY_ALL_ACCESS)
 
         DeleteValue(hkey, key)
     except Exception as e:
@@ -201,9 +203,11 @@ def writeHistory(newData):
             historyLog = json.load(file)
             if time.strftime("%Y%m%d", time.localtime()) in historyLog[len(historyLog) - 1]:
                 for item in newData:
-                    historyLog[len(historyLog) - 1][time.strftime("%Y%m%d", time.localtime())].append(item)
+                    historyLog[len(
+                        historyLog) - 1][time.strftime("%Y%m%d", time.localtime())].append(item)
             else:
-                todayData = json.loads(json.dumps({time.strftime("%Y%m%d", time.localtime()): newData}))
+                todayData = json.loads(json.dumps(
+                    {time.strftime("%Y%m%d", time.localtime()): newData}))
                 historyLog.append(todayData)
             file.seek(0)
             json.dump(historyLog, file, indent=4)
@@ -264,7 +268,8 @@ class DeepScanThread(QtCore.QThread):
             sleep(1)
 
             if self.pause:
-                while self.pause: continue
+                while self.pause:
+                    continue
             elif self.killed:
                 return
             else:
@@ -277,6 +282,7 @@ class DeepScanThread(QtCore.QThread):
 class History(QtWidgets.QMainWindow):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
+        self.main = Main()
         self.ui = Ui_HistoryLayout()
         self.ui.setupUi(self)
         self.ui.tableAll.setColumnWidth(0, 150)
@@ -289,7 +295,6 @@ class History(QtWidgets.QMainWindow):
         self.setTableAllData()
 
     def backDashboard(self):
-        self.main = Main()
         self.main.show()
         self.close()
 
@@ -298,7 +303,8 @@ class History(QtWidgets.QMainWindow):
             with open("database/history.json", "r+") as file:
                 historyLog = json.load(file)
                 self.lastDayObject = historyLog[-1]
-                self.lastDayHistory = self.lastDayObject[list(self.lastDayObject.keys())[0]]
+                self.lastDayHistory = self.lastDayObject[list(
+                    self.lastDayObject.keys())[0]]
                 print(self.lastDayHistory)
                 row = 0
                 self.ui.tableAll.setRowCount(len(self.lastDayHistory))
@@ -307,13 +313,18 @@ class History(QtWidgets.QMainWindow):
                 registryDetectedData = ''
                 for model in self.lastDayHistory:
                     for file in model['fileDetected']:
-                        fileDetectedData += (str(file).replace('\\', '/') + '\n')
+                        fileDetectedData += (str(file).replace('\\',
+                                             '/') + '\n')
                         self.detected += 1
                     for registry in model['registryDetected']:
-                        registryDetectedData += (str(registry).replace('\\', '/') + '\n')
-                    self.ui.tableAll.setItem(row, 0, QtWidgets.QTableWidgetItem(model['virusName']))
-                    self.ui.tableAll.setItem(row, 1, QtWidgets.QTableWidgetItem(fileDetectedData))
-                    self.ui.tableAll.setItem(row, 2, QtWidgets.QTableWidgetItem(registryDetectedData))
+                        registryDetectedData += (
+                            str(registry).replace('\\', '/') + '\n')
+                    self.ui.tableAll.setItem(
+                        row, 0, QtWidgets.QTableWidgetItem(model['virusName']))
+                    self.ui.tableAll.setItem(
+                        row, 1, QtWidgets.QTableWidgetItem(fileDetectedData))
+                    self.ui.tableAll.setItem(
+                        row, 2, QtWidgets.QTableWidgetItem(registryDetectedData))
                     row += 1
             self.ui.lbAmountDetected.setText(str(self.detected))
             self.ui.lbAmountDeleted.setText(str(self.detected))
@@ -336,7 +347,8 @@ class History(QtWidgets.QMainWindow):
             msgBox = QMessageBox()
             msgBox.setWindowTitle("Details")
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap("views/icons/tav_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            icon.addPixmap(QtGui.QPixmap("views/icons/tav_logo.png"),
+                           QtGui.QIcon.Normal, QtGui.QIcon.Off)
             msgBox.setWindowIcon(icon)
             msgBox.setText(messages)
             msgBox.exec()

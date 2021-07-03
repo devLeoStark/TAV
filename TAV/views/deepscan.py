@@ -16,7 +16,8 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         DeepScanLayout.setObjectName("DeepScanLayout")
         DeepScanLayout.resize(900, 600)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(
+            "views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         DeepScanLayout.setWindowIcon(icon)
         DeepScanLayout.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(DeepScanLayout)
@@ -26,7 +27,8 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.btnHome.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnHome.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(
+            "views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnHome.setIcon(icon1)
         self.btnHome.setIconSize(QtCore.QSize(40, 40))
         self.btnHome.setObjectName("btnHome")
@@ -62,7 +64,8 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.logBrowser.setObjectName("logBrowser")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(690, 170, 195, 31))
+        self.horizontalLayoutWidget_2.setGeometry(
+            QtCore.QRect(690, 170, 195, 31))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.buttonBar = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.buttonBar.setContentsMargins(0, 0, 0, 0)
@@ -71,12 +74,14 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.pushButton.setObjectName("pushButton")
         self.pushButton.setVisible(False)
         self.buttonBar.addWidget(self.pushButton)
-        self.pushButton_2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
+        self.pushButton_2 = QtWidgets.QPushButton(
+            self.horizontalLayoutWidget_2)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.setVisible(False)
         self.buttonBar.addWidget(self.pushButton_2)
         self.circularProgressBarBase = QtWidgets.QFrame(self.centralwidget)
-        self.circularProgressBarBase.setGeometry(QtCore.QRect(290, 150, 320, 380))
+        self.circularProgressBarBase.setGeometry(
+            QtCore.QRect(290, 150, 320, 380))
         self.circularProgressBarBase.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.circularProgressBarBase.setFrameShadow(QtWidgets.QFrame.Raised)
         self.circularProgressBarBase.setObjectName("circularProgressBarBase")
@@ -109,10 +114,12 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.container.setObjectName("container")
         self.lbTitle = QtWidgets.QLabel(self.container)
         self.lbTitle.setGeometry(QtCore.QRect(0, 20, 271, 45))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lbTitle.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.lbTitle.sizePolicy().hasHeightForWidth())
         self.lbTitle.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -139,7 +146,7 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         font.setPointSize(12)
         self.lbDeleted.setFont(font)
         self.lbDeleted.setStyleSheet("color:#c82032;\n"
-                                      "background-color: none;")
+                                     "background-color: none;")
         self.lbDeleted.setAlignment(QtCore.Qt.AlignCenter)
         self.lbDeleted.setObjectName("lbDeleted")
         self.lbDetected = QtWidgets.QLabel(self.container)
@@ -154,10 +161,12 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.lbDetected.setObjectName("lbDetected")
         self.lbScanning = QtWidgets.QLabel(self.container)
         self.lbScanning.setGeometry(QtCore.QRect(0, 240, 271, 25))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lbScanning.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.lbScanning.sizePolicy().hasHeightForWidth())
         self.lbScanning.setSizePolicy(sizePolicy)
         self.lbScanning.setMaximumSize(QtCore.QSize(16777215, 25))
         font = QtGui.QFont()
@@ -167,18 +176,22 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
                                       "background-color: none;")
         self.lbScanning.setAlignment(QtCore.Qt.AlignCenter)
         self.lbScanning.setObjectName("lbScanning")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(self.circularProgressBarBase)
+        self.horizontalLayoutWidget = QtWidgets.QWidget(
+            self.circularProgressBarBase)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(20, 330, 271, 41))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(
+            self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.btnPause = QtWidgets.QPushButton(self.horizontalLayoutWidget)
         self.btnPause.setCheckable(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnPause.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnPause.sizePolicy().hasHeightForWidth())
         self.btnPause.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -186,15 +199,18 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.btnPause.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnPause.setStyleSheet("color: #c82032;")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("views/icons/pause_resume.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("views/icons/pause_resume.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnPause.setIcon(icon2)
         self.btnPause.setObjectName("btnPause")
         self.horizontalLayout.addWidget(self.btnPause)
         self.btnCancel = QtWidgets.QPushButton(self.horizontalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnCancel.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnCancel.sizePolicy().hasHeightForWidth())
         self.btnCancel.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -202,7 +218,8 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.btnCancel.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnCancel.setStyleSheet("color: #c82032;")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("views/icons/cancel_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("views/icons/cancel_icon.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCancel.setIcon(icon3)
         self.btnCancel.setObjectName("btnCancel")
         self.horizontalLayout.addWidget(self.btnCancel)
@@ -217,7 +234,8 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
 
     def retranslateUi(self, DeepScanLayout):
         _translate = QtCore.QCoreApplication.translate
-        DeepScanLayout.setWindowTitle(_translate("DeepScanLayout", "Deep Scan"))
+        DeepScanLayout.setWindowTitle(
+            _translate("DeepScanLayout", "Deep Scan"))
         self.lbl_name.setText(_translate("DeepScanLayout", "DEEP SCAN"))
         self.logBrowser.setHtml(_translate("DeepScanLayout",
                                            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -236,4 +254,3 @@ class Ui_DeepScanLayout(QtWidgets.QMainWindow):
         self.lbScanning.setText(_translate("DeepScanLayout", "Scanning..."))
         self.btnPause.setText(_translate("DeepScanLayout", "Pause"))
         self.btnCancel.setText(_translate("DeepScanLayout", "Cancel"))
-

@@ -11,6 +11,7 @@ import json
 import os
 import sys
 import time
+import win32api
 
 import psutil as psutil
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -21,19 +22,19 @@ COLOR_BLACK = QColor(0, 0, 0)
 COLOR_RED = QColor(255, 0, 0)
 COLOR_GREEN = QColor(0, 120, 0)
 
-MD5 = SHA256 = 1
 SAFE = 1
-VIRUS = 3
+VIRUS = -1
 
-virus_endswith_list = {
-    'exe', 'pif', 'application', 'gadget', 'msi', 'msp', 'com', 'scr', 'hta', 'cpl', 'msc', 'jar',
-    'bat', 'cmd', 'vb', 'vbs', 'vbe', 'js', 'jse', 'ws', 'wsf', 'wsc', 'wsh', 'ps1', 'ps1xml', 'ps2', 'ps2xml',
-    'psc1', 'psc2', 'msh', 'msh1', 'msh2', 'mshxml', 'msh1xml', 'msh2xml',
-    'scf', 'lnk', 'inf',
-    'reg',
-    'doc', 'xls', 'ppt', 'docm', 'dotm', 'xlsm', 'xltm', 'xlam', 'pptm', 'potm', 'ppam', 'ppsm', 'sldm',
-    'chm', 'hlp', 'sct', 'shb', 'shs',
-}
+
+# virus_endswith_list = {
+#     'exe', 'pif', 'application', 'gadget', 'msi', 'msp', 'com', 'scr', 'hta', 'cpl', 'msc', 'jar',
+#     'bat', 'cmd', 'vb', 'vbs', 'vbe', 'js', 'jse', 'ws', 'wsf', 'wsc', 'wsh', 'ps1', 'ps1xml', 'ps2', 'ps2xml',
+#     'psc1', 'psc2', 'msh', 'msh1', 'msh2', 'mshxml', 'msh1xml', 'msh2xml',
+#     'scf', 'lnk', 'inf',
+#     'reg',
+#     'doc', 'xls', 'ppt', 'docm', 'dotm', 'xlsm', 'xltm', 'xlam', 'pptm', 'potm', 'ppam', 'ppsm', 'sldm',
+#     'chm', 'hlp', 'sct', 'shb', 'shs',
+# }
 
 
 def hashFileMD5(file):
@@ -59,7 +60,7 @@ def hashFileSHA256(file):
 
 
 def readJsonData(dataPath):
-    with open(dataPath) as json_file:
+    with open(dataPath, encoding="utf8") as json_file:
         jsonData = json.load(json_file)
         return jsonData
 
@@ -71,9 +72,9 @@ def databaseChecking(filePath):
     database = readJsonData("database/data.json")
     for data in database:
         if fileToMD5 == data["md5"]:
-            level += MD5
-        if fileToSHA256 == data["sha256"]:
-            level += SHA256
+            level = VIRUS
+        elif fileToSHA256 == data["sha256"]:
+            level = VIRUS
     return level
 
 
@@ -94,7 +95,8 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
     def chooseFolder(self):
         print(str(self))
         try:
-            folderName = QFileDialog.getExistingDirectory(None, "Choose Folder", "C:/", QFileDialog.ShowDirsOnly)
+            folderName = QFileDialog.getExistingDirectory(
+                None, "Choose Folder", "C:/", QFileDialog.ShowDirsOnly)
             self.folderPath.setText(folderName)
         except Exception as e:
             print(str(e))
@@ -102,13 +104,14 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
     def scanning(self):
         try:
             if self.optionFullScan.isChecked():
-                path = "C:/"
-                self.fullScan(path)
+                self.fullScan()
             else:
                 if self.folderPath.text() == "":
-                    QMessageBox.warning(self, 'Alert', "Please choose your folder", QMessageBox.Yes, QMessageBox.Yes)
+                    QMessageBox.warning(
+                        self, 'Alert', "Please choose your folder", QMessageBox.Yes, QMessageBox.Yes)
                 elif not checkPath(self.folderPath.text()):
-                    QMessageBox.warning(self, 'Alert', "Folder is invalid", QMessageBox.Yes, QMessageBox.Yes)
+                    QMessageBox.warning(
+                        self, 'Alert', "Folder is invalid", QMessageBox.Yes, QMessageBox.Yes)
                 else:
                     path = self.folderPath.text()
                     self.clearScanLog()
@@ -116,27 +119,53 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         except Exception as e:
             print(e)
 
-    def fullScan(self, path):
+    def fullScan(self):
         self.showScanTool(True)
-        self.logBrowser.append("Full Scanning: " + path)
+        drives = win32api.GetLogicalDriveStrings()
+        drives = drives.split('\000')[:-1]
+        for drive in drives:
+            self.logBrowser.append("Scanning: " + drive)
+            self.specificScan(drive)
 
     def specificScan(self, path):
         try:
+            self.fileAmount = None
             self.showScanTool(True)
             self.isScanning(True)
             self.logBrowser.append("Scanning: " + path)
-            self.logBrowser.append("-----------------------*****-----------------------")
+            self.logBrowser.append(
+                "-----------------------*****-----------------------")
             scanPath = path.replace('/', '\\')
             self.scanThread = ScanThread(parent=None, dir=scanPath)
+            self.countfileThread = CountFileThread(parent=None, dir=scanPath)
             self.scanThread.start()
+            self.countfileThread.start()
             self.scanThread.result.connect(self.loggingProcess)
             self.scanThread.progressValue.connect(self.progressing)
             self.scanThread.done.connect(self.finishScan)
+            self.countfileThread.amount.connect(self.amount)
+            self.countfileThread.done.connect(self.finishCount)
+
         except Exception as e:
             print(e)
 
+    def amount(self, amount):
+        self.fileSize = amount
+
+    def finishCount(self, bool):
+        if bool == True:
+            self.fileAmount = self.fileSize
+            self.countfileThread.stop()
+
     def progressing(self, value):
-        self.progressBarScan.setValue(value)
+        if self.fileAmount != None:
+            self.progressBarScan.setMaximum(100)
+            self.progressBarScan.setValue(int((value / self.fileAmount) * 100))
+            self.lblStatus.setText(
+                "Scanned: " + str(value) + "/" + str("{0:.0f}".format(self.fileAmount)))
+        else:
+            self.progressBarScan.setMaximum(0)
+            self.lblStatus.setText("Analyzing...")
 
     def showScanTool(self, boolean):
         if boolean:
@@ -144,22 +173,26 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
             self.btnClearLog.setVisible(True)
             self.btnControl.setVisible(True)
             self.progressBarScan.setVisible(True)
+            self.lblStatus.setVisible(True)
         else:
             self.btnCancel.setVisible(False)
             self.btnClearLog.setVisible(False)
             self.btnControl.setVisible(False)
             self.progressBarScan.setVisible(False)
+            self.lblStatus.setVisible(False)
 
     def finishScan(self, bool):
         if bool:
             self.logBrowser.setTextColor(COLOR_BLACK)
             self.logBrowser.append("=== FINISHED ===")
             self.isScanning(False)
+            self.scanThread.stop()
 
     def loggingProcess(self, result):
         guess = result[:1]
         path = result[1:]
-        logLine = time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime()) + ":  " + path
+        logLine = time.strftime("%Y/%m/%d - %H:%M:%S",
+                                time.localtime()) + ":  " + path
         if int(guess) == VIRUS:
             self.logBrowser.setTextColor(COLOR_RED)
         else:
@@ -186,6 +219,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
     def cancelScan(self):
         self.scanThread.killed = True
         self.isScanning(False)
+        self.scanThread.stop()
 
     def scanControl(self):
         if self.btnControl.isChecked():
@@ -212,15 +246,18 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
     def setupUi(self, QuickScanLayout):
         QuickScanLayout.setObjectName("QuickScanLayout")
         QuickScanLayout.resize(900, 600)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(QuickScanLayout.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            QuickScanLayout.sizePolicy().hasHeightForWidth())
         QuickScanLayout.setSizePolicy(sizePolicy)
         QuickScanLayout.setMinimumSize(QtCore.QSize(900, 600))
         QuickScanLayout.setMaximumSize(QtCore.QSize(900, 600))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(
+            "views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         QuickScanLayout.setWindowIcon(icon)
         QuickScanLayout.setStyleSheet("background-color: rgb(255, 255, 255);")
         QuickScanLayout.setIconSize(QtCore.QSize(30, 30))
@@ -241,14 +278,16 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.lbl_name.setFont(font)
         self.lbl_name.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.lbl_name.setStyleSheet("color: #c82032;")
-        self.lbl_name.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+        self.lbl_name.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.lbl_name.setObjectName("lbl_name")
         self.btnHome = QtWidgets.QPushButton(self.centralwidget)
         self.btnHome.setGeometry(QtCore.QRect(17, 13, 50, 50))
         self.btnHome.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnHome.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(
+            "views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnHome.setIcon(icon1)
         self.btnHome.setIconSize(QtCore.QSize(40, 40))
         self.btnHome.setObjectName("btnHome")
@@ -258,50 +297,87 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.logToolBar = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.logToolBar.setContentsMargins(0, 0, 0, 0)
         self.logToolBar.setObjectName("logToolBar")
-        self.progressBarScan = QtWidgets.QProgressBar(self.horizontalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.progressBarScan = QtWidgets.QProgressBar(
+            self.horizontalLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.progressBarScan.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.progressBarScan.sizePolicy().hasHeightForWidth())
         self.progressBarScan.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(7)
+        self.progressBarScan.setFont(font)
+        self.progressBarScan.setStyleSheet("QProgressBar::chunk\n"
+                                           "{\n"
+                                           "    background-color: #374f8a;\n"
+                                           "}\n"
+                                           "QProgressBar\n"
+                                           "{\n"
+                                           "color: #ffffff;\n"
+                                           "background-color : #99aaed;\n"
+                                           "border : 1px;\n"
+                                           "}\n"
+                                           "")
         self.progressBarScan.setProperty("value", 24)
         self.progressBarScan.setObjectName("progressBarScan")
+        self.progressBarScan.setAlignment(QtCore.Qt.AlignCenter)
         self.progressBarScan.setVisible(False)
         self.progressBarScan.setValue(0)
-        self.logToolBar.addWidget(self.progressBarScan)
-        self.btnControl = QtWidgets.QPushButton(self.horizontalLayoutWidget, clicked=lambda: self.scanControl())
+        self.verticalLayout_4.addWidget(self.progressBarScan)
+        self.logToolBar.addLayout(self.verticalLayout_4)
+        self.lblStatus = QtWidgets.QLabel(self.horizontalLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        self.lblStatus.setFont(font)
+        self.lblStatus.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.lblStatus.setStyleSheet("color: #374f8a;")
+        self.lblStatus.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblStatus.setObjectName("lblStatus")
+        self.lblStatus.setVisible(False)
+        self.verticalLayout_4.addWidget(self.lblStatus)
+        self.btnControl = QtWidgets.QPushButton(
+            self.horizontalLayoutWidget, clicked=lambda: self.scanControl())
         font = QtGui.QFont()
         font.setPointSize(10)
         self.btnControl.setFont(font)
         self.btnControl.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnControl.setStyleSheet("color: #c82032;")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("views/icons/pause_resume.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("views/icons/pause_resume.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnControl.setIcon(icon3)
         self.btnControl.setObjectName("btnControl")
         self.btnControl.setVisible(False)
         self.btnControl.setCheckable(True)
         self.logToolBar.addWidget(self.btnControl)
-        self.btnClearLog = QtWidgets.QPushButton(self.horizontalLayoutWidget, clicked=lambda: self.clearScanLog())
+        self.btnClearLog = QtWidgets.QPushButton(
+            self.horizontalLayoutWidget, clicked=lambda: self.clearScanLog())
         font = QtGui.QFont()
         font.setPointSize(10)
         self.btnClearLog.setFont(font)
         self.btnClearLog.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnClearLog.setStyleSheet("color: #c82032;")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("views/icons/eraser_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("views/icons/eraser_icon.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnClearLog.setIcon(icon2)
         self.btnClearLog.setObjectName("btnClearLog")
         self.btnClearLog.setVisible(False)
         self.logToolBar.addWidget(self.btnClearLog)
-        self.btnCancel = QtWidgets.QPushButton(self.horizontalLayoutWidget, clicked=lambda: self.cancelScan())
+        self.btnCancel = QtWidgets.QPushButton(
+            self.horizontalLayoutWidget, clicked=lambda: self.cancelScan())
         font = QtGui.QFont()
         font.setPointSize(10)
         self.btnCancel.setFont(font)
         self.btnCancel.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnCancel.setStyleSheet("color: #c82032;")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("views/icons/cancel_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("views/icons/cancel_icon.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCancel.setIcon(icon3)
         self.btnCancel.setObjectName("btnCancel")
         self.btnCancel.setVisible(False)
@@ -326,10 +402,12 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.verticalLayout.setObjectName("verticalLayout")
         self.optionFullScan = QtWidgets.QRadioButton(self.verticalLayoutWidget,
                                                      clicked=lambda: self.enableSpecificScan(False))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.optionFullScan.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.optionFullScan.sizePolicy().hasHeightForWidth())
         self.optionFullScan.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -353,19 +431,23 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.folderPath.setObjectName("folderPath")
         self.folderPath.setVisible(False)
         self.horizontalLayout_2.addWidget(self.folderPath)
-        self.btnChooseFolder = QtWidgets.QPushButton(self.verticalLayoutWidget, clicked=lambda: self.chooseFolder())
+        self.btnChooseFolder = QtWidgets.QPushButton(
+            self.verticalLayoutWidget, clicked=lambda: self.chooseFolder())
         self.btnChooseFolder.setEnabled(True)
         self.btnChooseFolder.setStyleSheet("color: #c82032;")
         self.btnChooseFolder.setObjectName("btnChooseFolder")
         self.btnChooseFolder.setVisible(False)
         self.horizontalLayout_2.addWidget(self.btnChooseFolder)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
-        self.btnScan = QtWidgets.QPushButton(self.centralwidget, clicked=lambda: self.scanning())
+        self.btnScan = QtWidgets.QPushButton(
+            self.centralwidget, clicked=lambda: self.scanning())
         self.btnScan.setGeometry(QtCore.QRect(700, 95, 180, 75))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnScan.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnScan.sizePolicy().hasHeightForWidth())
         self.btnScan.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(15)
@@ -375,7 +457,8 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.btnScan.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnScan.setStyleSheet("color: #c82032;")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("views/icons/scan.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("views/icons/scan.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnScan.setIcon(icon4)
         self.btnScan.setIconSize(QtCore.QSize(40, 40))
         self.btnScan.setObjectName("btnScan")
@@ -386,11 +469,13 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
 
     def retranslateUi(self, QuickScanLayout):
         _translate = QtCore.QCoreApplication.translate
-        QuickScanLayout.setWindowTitle(_translate("QuickScanLayout", "Quick Scan"))
+        QuickScanLayout.setWindowTitle(
+            _translate("QuickScanLayout", "Quick Scan"))
         self.lbl_name.setText(_translate("QuickScanLayout", "QUICK SCAN"))
         self.btnClearLog.setText(_translate("QuickScanLayout", "Clear log"))
         self.btnControl.setText(_translate("QuickScanLayout", "Pause"))
         self.btnCancel.setText(_translate("QuickScanLayout", "Cancel"))
+        self.lblStatus.setText(_translate("QuickScanLayout", "Status"))
         self.logBrowser.setHtml(_translate("QuickScanLayout",
                                            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -398,14 +483,15 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
                                            "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
                                            "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.optionFullScan.setText(_translate("QuickScanLayout", "Full scan"))
-        self.optionSpecificScan.setText(_translate("QuickScanLayout", "Specific scan"))
-        self.btnChooseFolder.setText(_translate("QuickScanLayout", "Choose folder"))
+        self.optionSpecificScan.setText(
+            _translate("QuickScanLayout", "Specific scan"))
+        self.btnChooseFolder.setText(_translate(
+            "QuickScanLayout", "Choose folder"))
         self.btnScan.setText(_translate("QuickScanLayout", "SCAN"))
 
 
 def processExists(file):
     return file in (p.name() for p in psutil.process_iter())
-
 
 
 class ScanThread(QtCore.QThread):
@@ -418,10 +504,10 @@ class ScanThread(QtCore.QThread):
         super(ScanThread, self).__init__(parent)
         self.path = dir
         self.guess = SAFE
-        self.total = getNumberOfFile(self.path)
         self.scanned = 0
         self.pause = False
         self.killed = False
+        self.isDone = False
 
     def run(self):
         try:
@@ -433,22 +519,23 @@ class ScanThread(QtCore.QThread):
                         print(file)
                     filePath = os.path.join(path, file)
                     self.scanned += 1
-                    if databaseChecking(filePath) > 0:
+                    if databaseChecking(filePath) == VIRUS:
                         self.guess = VIRUS
                     self.result.emit(str(self.guess) + filePath)
-                    self.progressValue.emit(int((self.scanned / self.total) * 100))
+                    self.progressValue.emit(int((self.scanned)))
 
-                    if self.scanned == self.total:
-                        self.done.emit(True)
-                    else:
-                        self.done.emit(False)
+                    self.isDone = False
+                    self.done.emit(self.isDone)
 
                     if self.pause:
-                        while self.pause: continue
+                        while self.pause:
+                            continue
                     elif self.killed:
                         return
                     else:
                         continue
+            self.isDone = True
+            self.done.emit(self.isDone)
         except Exception as e:
             print("specific scan catch")
             print(e)
@@ -458,4 +545,38 @@ class ScanThread(QtCore.QThread):
 
     def stop(self):
         print("stopping scan thread...")
+        self.terminate()
+
+
+class CountFileThread(QtCore.QThread):
+
+    amount = QtCore.pyqtSignal(float)
+    done = QtCore.pyqtSignal(bool)
+
+    def __init__(self, parent=None, dir=None):
+        super(CountFileThread, self).__init__(parent)
+        self.dir = dir
+        self.isDone = False
+
+    def run(self):
+        print("starting count file thread")
+        try:
+            count = 0
+            for path, directories, files in os.walk(self.dir):
+                for file in files:
+                    count += 1
+                self.amount.emit(count)
+                self.done.emit(self.isDone)
+            self.isDone = True
+            self.done.emit(self.isDone)
+
+        except Exception as e:
+            print("count thread catch")
+            print(e)
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+            print(exc_type, fname, exc_tb.tb_lineno)
+
+    def stop(self):
+        print("stopping count file thread...")
         self.terminate()

@@ -25,7 +25,8 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         DashboardLayout.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(
+            "views/icons/vku_antivirus_logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         DashboardLayout.setWindowIcon(icon)
         DashboardLayout.setAutoFillBackground(False)
         DashboardLayout.setStyleSheet("background-color: #ffffff;")
@@ -36,7 +37,8 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font = QtGui.QFont()
         self.lbl_logo.setFont(font)
         self.lbl_logo.setText("")
-        self.lbl_logo.setPixmap(QtGui.QPixmap("views/icons/vku_antivirus_logo_horizontal.png"))
+        self.lbl_logo.setPixmap(QtGui.QPixmap(
+            "views/icons/vku_antivirus_logo_horizontal.png"))
         self.lbl_logo.setScaledContents(True)
         self.lbl_logo.setObjectName("lbl_logo")
         font = QtGui.QFont()
@@ -50,7 +52,8 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         self.horizontalLayoutWidget.setFont(font)
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(
+            self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.btnOptions = QtWidgets.QPushButton(self.horizontalLayoutWidget)
@@ -58,9 +61,11 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         self.btnOptions.setFont(font)
         self.btnOptions.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnOptions.setStyleSheet("background-color: rgb(255, 255, 255); color: #c82032;")
+        self.btnOptions.setStyleSheet(
+            "background-color: rgb(255, 255, 255); color: #c82032;")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("views/icons/options.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("views/icons/options.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnOptions.setIcon(icon1)
         self.btnOptions.setObjectName("btnOptions")
         self.horizontalLayout.addWidget(self.btnOptions)
@@ -69,9 +74,11 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         self.btnAccount.setFont(font)
         self.btnAccount.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnAccount.setStyleSheet("background-color: rgb(255, 255, 255); color: #c82032;")
+        self.btnAccount.setStyleSheet(
+            "background-color: rgb(255, 255, 255); color: #c82032;")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("views/icons/personal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("views/icons/personal.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnAccount.setIcon(icon2)
         self.btnAccount.setObjectName("btnAccount")
         self.horizontalLayout.addWidget(self.btnAccount)
@@ -80,26 +87,33 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setFamily("Arial")
         self.btnSettings.setFont(font)
         self.btnSettings.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnSettings.setStyleSheet("background-color: rgb(255, 255, 255); color: #c82032;")
+        self.btnSettings.setStyleSheet(
+            "background-color: rgb(255, 255, 255); color: #c82032;")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("views/icons/setting_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("views/icons/setting_icon.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnSettings.setIcon(icon3)
         self.btnSettings.setObjectName("btnSettings")
         self.horizontalLayout.addWidget(self.btnSettings)
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(30, 170, 841, 191))
+        self.horizontalLayoutWidget_2.setGeometry(
+            QtCore.QRect(30, 170, 841, 191))
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.horizontalLayoutWidget_2.setFont(font)
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(
+            self.horizontalLayoutWidget_2)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.btnQuickScan = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        self.btnQuickScan = QtWidgets.QPushButton(
+            self.horizontalLayoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnQuickScan.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnQuickScan.sizePolicy().hasHeightForWidth())
         self.btnQuickScan.setSizePolicy(sizePolicy)
         self.btnQuickScan.setMinimumSize(QtCore.QSize(100, 150))
         font = QtGui.QFont()
@@ -109,7 +123,8 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setItalic(False)
         font.setWeight(9)
         self.btnQuickScan.setFont(font)
-        self.btnQuickScan.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btnQuickScan.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnQuickScan.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
         self.btnQuickScan.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.btnQuickScan.setAutoFillBackground(False)
@@ -118,7 +133,8 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
                                         "color: #c82032;")
         self.btnQuickScan.setInputMethodHints(QtCore.Qt.ImhNone)
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("views/icons/quick.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("views/icons/quick.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnQuickScan.setIcon(icon4)
         self.btnQuickScan.setIconSize(QtCore.QSize(60, 60))
         self.btnQuickScan.setCheckable(False)
@@ -126,10 +142,12 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnQuickScan.setObjectName("btnQuickScan")
         self.horizontalLayout_2.addWidget(self.btnQuickScan)
         self.btnDeepScan = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnDeepScan.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnDeepScan.sizePolicy().hasHeightForWidth())
         self.btnDeepScan.setSizePolicy(sizePolicy)
         self.btnDeepScan.setMinimumSize(QtCore.QSize(100, 150))
         font = QtGui.QFont()
@@ -148,18 +166,22 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
                                        "color: #c82032;")
         self.btnDeepScan.setInputMethodHints(QtCore.Qt.ImhNone)
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("views/icons/deep.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("views/icons/deep.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnDeepScan.setIcon(icon5)
         self.btnDeepScan.setIconSize(QtCore.QSize(60, 60))
         self.btnDeepScan.setCheckable(False)
         self.btnDeepScan.setAutoDefault(False)
         self.btnDeepScan.setObjectName("btnDeepScan")
         self.horizontalLayout_2.addWidget(self.btnDeepScan)
-        self.btnSchedulerScan = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        self.btnSchedulerScan = QtWidgets.QPushButton(
+            self.horizontalLayoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnSchedulerScan.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnSchedulerScan.sizePolicy().hasHeightForWidth())
         self.btnSchedulerScan.setSizePolicy(sizePolicy)
         self.btnSchedulerScan.setMinimumSize(QtCore.QSize(100, 150))
         font = QtGui.QFont()
@@ -169,8 +191,10 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setItalic(False)
         font.setWeight(9)
         self.btnSchedulerScan.setFont(font)
-        self.btnSchedulerScan.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btnSchedulerScan.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
+        self.btnSchedulerScan.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btnSchedulerScan.setContextMenuPolicy(
+            QtCore.Qt.ActionsContextMenu)
         self.btnSchedulerScan.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.btnSchedulerScan.setAutoFillBackground(False)
         self.btnSchedulerScan.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -178,18 +202,22 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
                                             "color: #c82032;")
         self.btnSchedulerScan.setInputMethodHints(QtCore.Qt.ImhNone)
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("views/icons/schedule.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap("views/icons/schedule.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnSchedulerScan.setIcon(icon6)
         self.btnSchedulerScan.setIconSize(QtCore.QSize(60, 60))
         self.btnSchedulerScan.setCheckable(False)
         self.btnSchedulerScan.setAutoDefault(False)
         self.btnSchedulerScan.setObjectName("btnSchedulerScan")
         self.horizontalLayout_2.addWidget(self.btnSchedulerScan)
-        self.btnDiskCleanup = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        self.btnDiskCleanup = QtWidgets.QPushButton(
+            self.horizontalLayoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnDiskCleanup.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnDiskCleanup.sizePolicy().hasHeightForWidth())
         self.btnDiskCleanup.setSizePolicy(sizePolicy)
         self.btnDiskCleanup.setMinimumSize(QtCore.QSize(100, 150))
         font = QtGui.QFont()
@@ -199,7 +227,8 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         font.setItalic(False)
         font.setWeight(9)
         self.btnDiskCleanup.setFont(font)
-        self.btnDiskCleanup.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btnDiskCleanup.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btnDiskCleanup.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
         self.btnDiskCleanup.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.btnDiskCleanup.setAutoFillBackground(False)
@@ -208,7 +237,8 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
                                           "color: #c82032;")
         self.btnDiskCleanup.setInputMethodHints(QtCore.Qt.ImhNone)
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("views/icons/cleanup.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon7.addPixmap(QtGui.QPixmap("views/icons/cleanup.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnDiskCleanup.setIcon(icon7)
         self.btnDiskCleanup.setIconSize(QtCore.QSize(60, 60))
         self.btnDiskCleanup.setCheckable(False)
@@ -216,19 +246,23 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
         self.btnDiskCleanup.setObjectName("btnDiskCleanup")
         self.horizontalLayout_2.addWidget(self.btnDiskCleanup)
         self.horizontalLayoutWidget_3 = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(30, 440, 841, 52))
+        self.horizontalLayoutWidget_3.setGeometry(
+            QtCore.QRect(30, 440, 841, 52))
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.horizontalLayoutWidget_3.setFont(font)
         self.horizontalLayoutWidget_3.setObjectName("horizontalLayoutWidget_3")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_3)
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(
+            self.horizontalLayoutWidget_3)
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.btnHistory = QtWidgets.QPushButton(self.horizontalLayoutWidget_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnHistory.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnHistory.sizePolicy().hasHeightForWidth())
         self.btnHistory.setSizePolicy(sizePolicy)
         self.btnHistory.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
@@ -243,16 +277,19 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
                                       "font: 75 11pt \"Arial\";\n"
                                       "color: #c82032;")
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("views/icons/history.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon8.addPixmap(QtGui.QPixmap("views/icons/history.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnHistory.setIcon(icon8)
         self.btnHistory.setIconSize(QtCore.QSize(40, 40))
         self.btnHistory.setObjectName("btnHistory")
         self.horizontalLayout_3.addWidget(self.btnHistory)
         self.btnPrivacy = QtWidgets.QPushButton(self.horizontalLayoutWidget_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnPrivacy.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnPrivacy.sizePolicy().hasHeightForWidth())
         self.btnPrivacy.setSizePolicy(sizePolicy)
         self.btnPrivacy.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
@@ -267,16 +304,19 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
                                       "font: 75 11pt \"Arial\";\n"
                                       "color: #c82032;")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("views/icons/privacy.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon9.addPixmap(QtGui.QPixmap("views/icons/privacy.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnPrivacy.setIcon(icon9)
         self.btnPrivacy.setIconSize(QtCore.QSize(40, 40))
         self.btnPrivacy.setObjectName("btnPrivacy")
         self.horizontalLayout_3.addWidget(self.btnPrivacy)
         self.btnSupport = QtWidgets.QPushButton(self.horizontalLayoutWidget_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnSupport.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.btnSupport.sizePolicy().hasHeightForWidth())
         self.btnSupport.setSizePolicy(sizePolicy)
         self.btnSupport.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
@@ -291,7 +331,8 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
                                       "font: 75 11pt \"Arial\";\n"
                                       "color: #c82032;")
         icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("views/icons/support.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon10.addPixmap(QtGui.QPixmap("views/icons/support.png"),
+                         QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnSupport.setIcon(icon10)
         self.btnSupport.setIconSize(QtCore.QSize(40, 40))
         self.btnSupport.setObjectName("btnSupport")
@@ -307,15 +348,17 @@ class Ui_DashboardLayout(QtWidgets.QMainWindow):
 
     def retranslateUi(self, DashboardLayout):
         _translate = QtCore.QCoreApplication.translate
-        DashboardLayout.setWindowTitle(_translate("DashboardLayout", "VKU Antivirus"))
+        DashboardLayout.setWindowTitle(
+            _translate("DashboardLayout", "VKU Antivirus"))
         self.btnOptions.setText(_translate("DashboardLayout", "Options"))
         self.btnAccount.setText(_translate("DashboardLayout", "Account"))
         self.btnSettings.setText(_translate("DashboardLayout", "Settings"))
         self.btnQuickScan.setText(_translate("DashboardLayout", "Quick Scan"))
         self.btnDeepScan.setText(_translate("DashboardLayout", "Deep Scan"))
-        self.btnSchedulerScan.setText(_translate("DashboardLayout", "Scheduler Scan"))
-        self.btnDiskCleanup.setText(_translate("DashboardLayout", "Disk Cleanup"))
+        self.btnSchedulerScan.setText(_translate(
+            "DashboardLayout", "Scheduler Scan"))
+        self.btnDiskCleanup.setText(_translate(
+            "DashboardLayout", "Disk Cleanup"))
         self.btnHistory.setText(_translate("DashboardLayout", "History"))
         self.btnPrivacy.setText(_translate("DashboardLayout", "Privacy"))
         self.btnSupport.setText(_translate("DashboardLayout", "Support"))
-
