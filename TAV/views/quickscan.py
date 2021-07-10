@@ -23,7 +23,7 @@ COLOR_RED = QColor(255, 0, 0)
 COLOR_GREEN = QColor(0, 120, 0)
 
 SAFE = 1
-VIRUS = -1
+VIRUS = 3
 
 
 # virus_endswith_list = {
@@ -122,18 +122,24 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
     def fullScan(self):
         self.showScanTool(True)
         drives = win32api.GetLogicalDriveStrings()
+        print(drives)
         drives = drives.split('\000')[:-1]
         for drive in drives:
-            self.logBrowser.append("Scanning: " + drive)
             self.specificScan(drive)
+            while self.scanThread.isRunning():
+                time.sleep()
 
     def specificScan(self, path):
         try:
+            self.scanPath = path
             self.fileAmount = None
             self.showScanTool(True)
             self.isScanning(True)
             self.logBrowser.append("Scanning: " + path)
             self.logBrowser.append(
+                "-----------------------*****-----------------------")
+            self.logBrowserMalware.append("Scanning: " + path)
+            self.logBrowserMalware.append(
                 "-----------------------*****-----------------------")
             scanPath = path.replace('/', '\\')
             self.scanThread = ScanThread(parent=None, dir=scanPath)
@@ -141,7 +147,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
             self.scanThread.start()
             self.countfileThread.start()
             self.scanThread.result.connect(self.loggingProcess)
-            self.scanThread.progressValue.connect(self.progressing)
+            self.scanThread.fileScanned.connect(self.progressing)
             self.scanThread.done.connect(self.finishScan)
             self.countfileThread.amount.connect(self.amount)
             self.countfileThread.done.connect(self.finishCount)
@@ -161,11 +167,12 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         if self.fileAmount != None:
             self.progressBarScan.setMaximum(100)
             self.progressBarScan.setValue(int((value / self.fileAmount) * 100))
-            self.lblStatus.setText(
-                "Scanned: " + str(value) + "/" + str("{0:.0f}".format(self.fileAmount)))
+            self.lblStatus.setText("Scanning " + str(self.scanPath) + "   -   " + "Scanned: " + str(
+                value) + "/" + str("{0:.0f}".format(self.fileAmount)))
         else:
             self.progressBarScan.setMaximum(0)
-            self.lblStatus.setText("Analyzing...")
+            self.lblStatus.setText(
+                "Scanning " + str(self.scanPath) + "   -   " + "Analyzing...")
 
     def showScanTool(self, boolean):
         if boolean:
@@ -195,6 +202,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
                                 time.localtime()) + ":  " + path
         if int(guess) == VIRUS:
             self.logBrowser.setTextColor(COLOR_RED)
+            self.logBrowserMalware.append(logLine)
         else:
             self.logBrowser.setTextColor(COLOR_GREEN)
         self.logBrowser.append(logLine)
@@ -313,12 +321,12 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.progressBarScan.setFont(font)
         self.progressBarScan.setStyleSheet("QProgressBar::chunk\n"
                                            "{\n"
-                                           "    background-color: #374f8a;\n"
+                                           "    background-color: #f7961e;\n"
                                            "}\n"
                                            "QProgressBar\n"
                                            "{\n"
-                                           "color: #ffffff;\n"
-                                           "background-color : #99aaed;\n"
+                                           "color: #374f8a;\n"
+                                           "background-color : #ffc754;\n"
                                            "border : 1px;\n"
                                            "}\n"
                                            "")
@@ -382,18 +390,6 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.btnCancel.setObjectName("btnCancel")
         self.btnCancel.setVisible(False)
         self.logToolBar.addWidget(self.btnCancel)
-        self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
-        self.scrollArea.setGeometry(QtCore.QRect(20, 200, 865, 331))
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 863, 329))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.logBrowser = QtWidgets.QTextBrowser(self.scrollAreaWidgetContents)
-        self.logBrowser.setGeometry(QtCore.QRect(0, 0, 865, 331))
-        self.logBrowser.setMaximumSize(QtCore.QSize(865, 360))
-        self.logBrowser.setObjectName("logBrowser")
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 100, 631, 78))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
@@ -462,9 +458,46 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
         self.btnScan.setIcon(icon4)
         self.btnScan.setIconSize(QtCore.QSize(40, 40))
         self.btnScan.setObjectName("btnScan")
+        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabWidget.setGeometry(QtCore.QRect(20, 180, 861, 341))
+        self.tabWidget.setObjectName("tabWidget")
+        self.tabAll = QtWidgets.QWidget()
+        self.tabAll.setObjectName("tabAll")
+        self.tabWidget.addTab(self.tabAll, "")
+        self.scrollArea = QtWidgets.QScrollArea(self.tabAll)
+        self.scrollArea.setGeometry(QtCore.QRect(0, 0, 865, 331))
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 863, 329))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.logBrowser = QtWidgets.QTextBrowser(self.scrollAreaWidgetContents)
+        self.logBrowser.setGeometry(QtCore.QRect(0, 0, 865, 331))
+        self.logBrowser.setMaximumSize(QtCore.QSize(865, 360))
+        self.logBrowser.setObjectName("logBrowser")
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.tabMalware = QtWidgets.QWidget()
+        self.tabMalware.setObjectName("tabMalware")
+        self.scrollAreaMalware = QtWidgets.QScrollArea(self.tabMalware)
+        self.scrollAreaMalware.setGeometry(QtCore.QRect(0, 0, 865, 331))
+        self.scrollAreaMalware.setWidgetResizable(True)
+        self.scrollAreaMalware.setObjectName("scrollAreaMalware")
+        self.scrollAreaWidgetContentsMalware = QtWidgets.QWidget()
+        self.scrollAreaWidgetContentsMalware.setGeometry(
+            QtCore.QRect(0, 0, 863, 329))
+        self.scrollAreaWidgetContentsMalware.setObjectName(
+            "scrollAreaWidgetContentsMalware")
+        self.logBrowserMalware = QtWidgets.QTextBrowser(
+            self.scrollAreaWidgetContentsMalware)
+        self.logBrowserMalware.setGeometry(QtCore.QRect(0, 0, 865, 331))
+        self.logBrowserMalware.setMaximumSize(QtCore.QSize(865, 360))
+        self.logBrowserMalware.setObjectName("logBrowserMalware")
+        self.scrollAreaMalware.setWidget(self.scrollAreaWidgetContentsMalware)
+        self.tabWidget.addTab(self.tabMalware, "")
         QuickScanLayout.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(QuickScanLayout)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(QuickScanLayout)
 
     def retranslateUi(self, QuickScanLayout):
@@ -482,6 +515,10 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
                                            "p, li { white-space: pre-wrap; }\n"
                                            "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
                                            "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(
+            self.tabAll), _translate("QuickScanLayout", "All"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(
+            self.tabMalware), _translate("QuickScanLayout", "Malware"))
         self.optionFullScan.setText(_translate("QuickScanLayout", "Full scan"))
         self.optionSpecificScan.setText(
             _translate("QuickScanLayout", "Specific scan"))
@@ -495,9 +532,8 @@ def processExists(file):
 
 
 class ScanThread(QtCore.QThread):
-    level = QtCore.pyqtSignal(int)
     result = QtCore.pyqtSignal(str)
-    progressValue = QtCore.pyqtSignal(int)
+    fileScanned = QtCore.pyqtSignal(int)
     done = QtCore.pyqtSignal(bool)
 
     def __init__(self, parent=None, dir=None):
@@ -522,7 +558,7 @@ class ScanThread(QtCore.QThread):
                     if databaseChecking(filePath) == VIRUS:
                         self.guess = VIRUS
                     self.result.emit(str(self.guess) + filePath)
-                    self.progressValue.emit(int((self.scanned)))
+                    self.fileScanned.emit(int((self.scanned)))
 
                     self.isDone = False
                     self.done.emit(self.isDone)

@@ -8,6 +8,13 @@
     ],
     "hkey_created": [
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Pbt32"
+    ],
+    "signature": [
+      "ADVAPI32.DLL",
+      "KERNEL32.DLL",
+      "USER32.DLL",
+      "__GetExceptDLLinfo",
+      "___CPPdebugHook"
     ]
   },
   {
@@ -28,6 +35,12 @@
     ],
     "hkey_created": [
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SharedDlls\\C:\\WINDOWS\\system32\\ChilkatMail_v8.dll"
+    ],
+    "signature": [
+      "VERSION.DLL",
+      "KERNEL32.DLL",
+      "USER32.DLL",
+      "WinNT (x86) Unicode Lib Rel"
     ]
   },
   {
@@ -54,6 +67,89 @@
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\AntiVirusOverride",
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\FirewallDisableNotify",
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security Center\\FirewallOverride"
+    ],
+    "signature": [
+      "WININET.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll",
+      "KERNEL32.dll",
+      "OLEAUT32.dll",
+      "SHELL32.dll",
+      "ole32.dll",
+      "COMCTL32.dll",
+      "USER32.dll",
+      "WSOCK32.dll",
+      "bind_textdomain_codeset",
+      "bindtextdomain",
+      "dcgettext",
+      "dcngettext",
+      "dgettext",
+      "dngettext",
+      "gettext",
+      "libintl_bind_textdomain_codeset",
+      "libintl_bindtextdomain",
+      "libintl_dcgettext",
+      "punanufawenyk.com",
+      "cuneqyqetyroj.com",
+      "qovukezur.com",
+      "dytebyhekaqa.com",
+      "qamezeqyce.com",
+      "gasicekymas.com",
+      "pipugodupexug.com",
+      "zelokovixoqe.com",
+      "hebypudukotih.com",
+      "takywegywejesy.com",
+      "baxivenom.com",
+      "xifuzakotyk.com",
+      "xajizukoxo.com",
+      "pulirutugeqaf.com",
+      "giwomylywokof.com",
+      "rydoryxowokic.com",
+      "salysymyp.com",
+      "vefyqylepahuga.com",
+      "jojevijehajyx.com",
+      "tinocusebawu.com",
+      "tytunajilac.com",
+      "vadyrokufubu.com",
+      "qamuvidobihu.com",
+      "gilebifabusexa.com",
+      "sixihyqecyfuku.com",
+      "tuwifotiju.com",
+      "jywujodocivine.com",
+      "wedytatuxug.com",
+      "lysocoharogyg.com",
+      "semuvajako.com",
+      "zizudadidura.com",
+      "gilodivere.com",
+      "wiqesidavevod.com",
+      "cagolasevaj.com",
+      "bakubuniho.com",
+      "zizyhaqizod.com",
+      "tedowuveqakej.com",
+      "luqotazih.com",
+      "xeruraxagum.com",
+      "geduhijykes.com",
+      "bigoxefyfaluh.com",
+      "ranamujesu.com",
+      "bipakypusiby.com",
+      "tutupeqyrar.com",
+      "vywobohexinipa.com",
+      "potasajic.com",
+      "xynixucujeduru.com",
+      "bytypupecex.com",
+      "mezibehab.com",
+      "sobudajib.com",
+      "gavorydigejizy.com",
+      "dihisalyh.com",
+      "tycalinumijotu.com",
+      "gidewuboler.com",
+      "wirybidyzufij.com",
+      "cajikohinele.com",
+      "turezidejuzok.com",
+      "nabubymepicizu.com",
+      "microsoft.com",
+      "togizypad.com",
+      "qixaxyrujuqici.com"
     ]
   },
   {
@@ -66,6 +162,19 @@
     "hkey_created": [
       "HKEY_CURRENT_USER\\Software\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows Script\\Settings\\JITDebug",
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\0800277A0DD3"
+    ],
+    "signature": [
+      "DNSAPI.dll",
+      "SHELL32.dll",
+      "kernel32.dll",
+      "MSVCRT.dll",
+      "OLEAUT32.dll",
+      "ADVAPI32.dll",
+      "ole32.dll",
+      "SHLWAPI.dll",
+      "WS2_32.dll",
+      "USER32.dll",
+      "users.qzone.qq.com"
     ]
   },
   {
@@ -79,6 +188,15 @@
     "hkey_created": [
       "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\AutoConfigURL",
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\wsysfxs"
+    ],
+    "signature": [
+      "user32.dll",
+      "KERNEL32.DLL",
+      "oleaut32.dll",
+      "advapi32.dll",
+      "version.dll",
+      "gdi32.dll",
+      "comctl32.dll"
     ]
   },
   {
@@ -104,6 +222,12 @@
       "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Discardable\\PostSetup\\Component Categories\\{00021493-0000-0000-C000-000000000046}\\Enum\\Implementing",
       "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FaultTime",
       "HKEY_CURRENT_USER\\S-1-5-21-1482476501-1645522239-1417001333-500\\SessionInformation\\ProgramCount"
+    ],
+    "signature": [
+      "advapi32.dll",
+      "kernel32.dll",
+      "oleaut32.dll",
+      "user32.dll"
     ]
   },
   {
@@ -115,6 +239,16 @@
     ],
     "hkey_created": [
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SysTry"
+    ],
+    "signature": [
+      "version.dll",
+      "gdi32.dll",
+      "advapi32.dll",
+      "kernel32.dll",
+      "oleaut32.dll",
+      "shell32.dll",
+      "user32.dll",
+      "comctl32.dll"
     ]
   },
   {
@@ -131,6 +265,16 @@
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\security",
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime",
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\STime"
+    ],
+    "signature": [
+      "KERNEL32.dll",
+      "RASAPI32.dll",
+      "OLEAUT32.dll",
+      "ADVAPI32.dll",
+      "iphlpapi.dll",
+      "ole32.dll",
+      "WS2_32.dll",
+      "RASMAN"
     ]
   },
   {
@@ -142,6 +286,9 @@
     ],
     "hkey_created": [
       ""
+    ],
+    "signature": [
+      "Import: MSVBVM60.DLL"
     ]
   },
   {
@@ -157,6 +304,14 @@
     "hkey_created": [
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
       "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
+    ],
+    "signature": [
+      "KERNEL32.DLL",
+      "WINSPOOL.DRV",
+      "ADVAPI32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "COMCTL32.dll"
     ]
   },
   {
@@ -183,6 +338,45 @@
     "hkey_created": [
       "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\UNCAsIntranet",
       "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\AutoDetect"
+    ],
+    "signature": [
+      "VERSION.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll",
+      "KERNEL32.dll",
+      "SHELL32.dll",
+      "ole32.dll",
+      "USER32.dll",
+      "COMCTL32.dll",
+      "http://taourl.com/6jb4v",
+      "http://ocsp2.globalsign.com/gsorganizationvalsha2g2/ME0wSzBJMEcwRTAJBgUrDgMCGgUABBQMnk2cPe3vhNiR6XLHz4QGvBl7BwQUlt5h8b0cFilTHMDMfTuDAEDmGnwCDBzmZKx2f3nQ1hnZjg==",
+      "http://www.bing.com/favicon.ico",
+      "http://www.178gg.com/lianjie/10608.htm",
+      "http://down.emoney.cn/wl06079.exe",
+      "http://ocsp.globalsign.com/rootr1/MEwwSjBIMEYwRDAJBgUrDgMCGgUABBS3V7W2nAf4FiMTjpDJKg6+MgGqMQQUYHtmGkUNl8qJUC99BM00qP/8/UsCCwQAAAAAAURO8EJH",
+      "http://batit.aliyun.com/alww.html",
+      "http://crl.globalsign.com/gs/gsorganizationvalsha2g2.crl",
+      "taourl.com",
+      "oo.shmtb.info",
+      "www.aliyun.com",
+      "www.178gg.com",
+      "ocsp2.globalsign.com",
+      "dl.pipi.cn",
+      "ocsp.globalsign.com",
+      "down.emoney.cn",
+      "www.bing.com",
+      "batit.aliyun.com",
+      "crl.globalsign.com",
+      "114.114.114.114:53 (UDP)",
+      "118.31.179.153:80 (TCP)",
+      "106.11.248.144:443 (TCP)",
+      "183.6.231.201:80 (TCP)",
+      "202.89.233.101:80 (TCP)",
+      "210.14.155.106:80 (TCP)",
+      "150.138.107.172:80 (TCP)",
+      "14.29.40.9:80 (TCP)",
+      "106.11.248.144:80 (TCP)",
+      "14.29.40.8:80 (TCP)"
     ]
   },
   {
@@ -192,15 +386,27 @@
     "file_created": [
       "C:\\Documents and Settings\\Administrator\\Local Settings\\Temp\\EB93A6\\996E.exe"
     ],
-    "hkey_created": [
+    "hkey_created": [],
+    "signature": [
+      "mpr.dll",
+      "gdi32.dll",
+      "advapi32.dll",
+      "kernel32.dll",
+      "oleaut32.dll",
+      "shell32.dll",
+      "ole32.dll",
+      "user32.dll",
+      "comctl32.dll",
+      "ads.range159-195.com",
+      "137.170.185.211:123 (UDP)",
+      "http://www.yixun.com/"
     ]
   },
   {
     "name": "Trojan.StartPage.ZRC",
     "md5": "781770fda3bd3236d0ab8274577dddde",
     "sha256": "32f01153ffc9f0fafcf6fb39f6b30e1e67ac99478e7eace314358a97ed0de032",
-    "file_created": [
-    ],
+    "file_created": [],
     "hkey_created": [
       "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows Script Host",
       "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows Script Host\\Settings"
@@ -228,10 +434,8 @@
     "name": "Trojan.JS.QFG",
     "md5": "999eb1840c209aa70a84c5cf64909e5f",
     "sha256": "12e2d8d46f7b5127a660f2f697daeb68db2331f81d4c9bb41e83da6840a71e39",
-    "file_created": [
-    ],
-    "hkey_created": [
-    ]
+    "file_created": [],
+    "hkey_created": []
   },
   {
     "name": "Gen:Trojan.Keylogger.bOWbaa7Gt6p",
@@ -263,10 +467,8 @@
     "name": "Generic.Startpage.9.4F2D2A2A",
     "md5": "1947b44cc6f64e565d8a4215bc655315",
     "sha256": "466bb157f72c7f5f559a0388d12b1de935ec5078fc4ad1994f961e20eb50bed8",
-    "file_created": [
-    ],
-    "hkey_created": [
-    ]
+    "file_created": [],
+    "hkey_created": []
   },
   {
     "name": "Generic.Malware.S!dld!g.4E54CEFA",
@@ -285,8 +487,7 @@
     "name": "Worm.Win32.WBNA.luev",
     "md5": "aa73b43084e93e741552e5b9c8dee457",
     "sha256": "a5a19b740703c692a4c0ab8f9560b982d9dacdf90ed899ae0117084547e504e9",
-    "file_created": [
-    ],
+    "file_created": [],
     "hkey_created": [
       "Software\\Microsoft\\Windows\\CurrentVersion\\Run\\vpwol",
       "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ShowSuperHidden"
@@ -309,10 +510,8 @@
     "name": "Trojan.GenericKD.1906259",
     "md5": "9a6229ebc128e7c9619409827da7a621",
     "sha256": "3b6b94e3cfde95e8bfa8d3f04503489fce38dd3c4547834efc74e261543cb1ec",
-    "file_created": [
-    ],
-    "hkey_created": [
-    ]
+    "file_created": [],
+    "hkey_created": []
   },
   {
     "name": "Gen:Heur.Crifi.1",
@@ -371,8 +570,7 @@
     "file_created": [
       "C:\\WINDOWS\\system32\\locarxjh.sls"
     ],
-    "hkey_created": [
-    ]
+    "hkey_created": []
   },
   {
     "name": "Trojan.BabyDel.A",
@@ -381,8 +579,7 @@
     "file_created": [
       "C:\\Windows\\system32\\wbem\\wmiprvse.exe -Embedding"
     ],
-    "hkey_created": [
-    ]
+    "hkey_created": []
   },
   {
     "name": "Trojan-Downloader.Win32.Monurl.gen",
@@ -415,8 +612,7 @@
     "name": "Trojan.Dialer.LD",
     "md5": "2f0f35cc352b5d6fee61ab69be50738f",
     "sha256": "14514563ff2d7f916f48bfcffa996b7b5f5b6fd930d3584f8f57733cb1cf9c5b",
-    "file_created": [
-    ],
+    "file_created": [],
     "hkey_created": [
       "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\warn",
       "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Security\\secure\\SVersion",
@@ -432,8 +628,7 @@
     "file_created": [
       "C:\\Documents and Settings\\All Users\\Application Data\\Microsoft\\Dr Watson\\drwtsn32.log"
     ],
-    "hkey_created": [
-    ]
+    "hkey_created": []
   },
   {
     "name": "Gen:Trojan.AV-Killer.dmHfamvEETe",
@@ -482,19 +677,15 @@
     "name": "Trojan.Generic.2142180",
     "md5": "249d5ebea5c02cb1811b1958f4d4c32d",
     "sha256": "feb2546ed1219c8ec1783292d2777145fdae39f26a3333a2b41688daaea4e8bd",
-    "file_created": [
-    ],
-    "hkey_created": [
-    ]
+    "file_created": [],
+    "hkey_created": []
   },
   {
     "name": "Trojan.Win32.Hupigon.m!c",
     "md5": "5c269c9ec0255bbd9f4e20420233b1a7",
     "sha256": "f9997cc62f9e5c15f4db39de4dc26341e5c0f4595cc9b42cf299dd33d11cf3cd",
-    "file_created": [
-    ],
-    "hkey_created": [
-    ]
+    "file_created": [],
+    "hkey_created": []
   },
   {
     "name": "Trojan.Downloader.WebDown.2.0",

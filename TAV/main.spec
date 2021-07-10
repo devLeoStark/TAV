@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['E:\\MyProjects\\Antivirus\\TAV'],
+             pathex=['E:\\Workspace\\python\\Antivirus\\TAV'],
              binaries=[],
              datas=[],
              hiddenimports=[],

@@ -1,6 +1,8 @@
+# pyinstaller --onefile -w main.py
 import json
 import os.path
 import sys
+import re
 import time
 from time import sleep
 from winreg import ConnectRegistry, HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, HKEY_USERS, \
@@ -29,6 +31,7 @@ class Main(QtWidgets.QMainWindow):
         self.ui.btnQuickScan.clicked.connect(self.displayQuickScanLayout)
         self.ui.btnDeepScan.clicked.connect(self.displayDeepScanProgress)
         self.ui.btnHistory.clicked.connect(self.displayHistoryDialog)
+        self.ui.btnSchedulerScan.clicked.connect(self.Signature)
 
     def displayQuickScanLayout(self):
         self.main = QuickScan()
@@ -44,6 +47,17 @@ class Main(QtWidgets.QMainWindow):
         self.history = History()
         self.history.show()
         self.close()
+
+    def Signature(self):
+        path = 'E:\\NCKH\\hash\\'
+        for path, directories, files in os.walk(path):
+            for file in files:
+                f = open(path + file, 'r')
+                lines = f.readlines()
+                f.close()
+                for line in lines:
+                    if re.search('Pls enter a file name', line):
+                        print("\nsignature: ")
 
 
 class QuickScan(QtWidgets.QMainWindow):
