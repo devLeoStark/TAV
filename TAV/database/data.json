@@ -414,6 +414,8 @@
   },
   {
     "name": "Trojan.Win32.Wootbot.m!c",
+    "type": "Win32 EXE",
+    "size": "262002",
     "md5": "86b6c59aa48a69e16d3313d982791398",
     "sha256": "570eab9ce89db496a22196746cdcc68d5924abed65655bd4042b14306eadd98f",
     "file_created": [
@@ -428,6 +430,27 @@
       "\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunServices\\MySLScan",
       "\\REGISTRY\\USER\\.DEFAULT\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\MySLScan",
       "\\REGISTRY\\USER\\.DEFAULT\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\MySLScan"
+    ],
+    "signature": [
+      "1337.m0rtus.info",
+      "ADVAPI32.dll ",
+      "GDI32.dll ",
+      "MSVCRT.dll ",
+      "NTDLL.DLL ",
+      "KERNEL32.dll ",
+      "USER32.dll ",
+      "comctl32.dll ",
+      "imm32.dll ",
+      "kernel32.dll ",
+      "WS2_32.dll ",
+      "PSAPI.DLL ",
+      "DnsMulticastQueryTimeouts ",
+      "KERNEL32.DLL ",
+      "advapi32.dll ",
+      "rpcrt4.dll ",
+      "WS2HELP.dll ",
+      "hnetcfg.dll ",
+      "C:\\WINDOWS\\System32\\wshtcpip.dll"
     ]
   },
   {

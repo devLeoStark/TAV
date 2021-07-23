@@ -202,6 +202,7 @@ class Ui_QuickScanLayout(QtWidgets.QMainWindow):
                                 time.localtime()) + ":  " + path
         if int(guess) == VIRUS:
             self.logBrowser.setTextColor(COLOR_RED)
+            self.logBrowserMalware.setTextColor(COLOR_RED)
             self.logBrowserMalware.append(logLine)
         else:
             self.logBrowser.setTextColor(COLOR_GREEN)

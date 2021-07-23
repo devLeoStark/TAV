@@ -620,5 +620,50 @@
                 "registryDetected": []
             }
         ]
+    },
+    {
+        "20210715": [
+            {
+                "virusName": "mooze",
+                "fileDetected": [
+                    "C:\\Windows\\System32\\Pbt32.exe"
+                ],
+                "registryDetected": [
+                    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Pbt32"
+                ]
+            },
+            {
+                "virusName": "xema",
+                "fileDetected": [
+                    ""
+                ],
+                "registryDetected": [
+                    "HKEY_CURRENT_USER\\Software\\S-1-5-21-1482476501-1645522239-1417001333-500\\Software\\Microsoft\\Windows Script\\Settings\\JITDebug",
+                    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\0800277A0DD3"
+                ]
+            },
+            {
+                "virusName": "delf",
+                "fileDetected": [
+                    "C:\\WINDOWS\\system32\\svchosts.exe"
+                ],
+                "registryDetected": [
+                    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\SysTry"
+                ]
+            },
+            {
+                "virusName": "hukle",
+                "fileDetected": [
+                    "C:\\Windows\\System32\\1560847240.dll",
+                    "C:\\Windows\\System32\\1560847240.exe",
+                    "C:\\Windows\\System32\\1561209425.dll",
+                    "C:\\Windows\\System32\\1561209425.exe"
+                ],
+                "registryDetected": [
+                    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3",
+                    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Windows Media SP.3"
+                ]
+            }
+        ]
     }
 ]
